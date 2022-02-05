@@ -1,34 +1,43 @@
-# Welcome to Remix!
+<h1 align="center">
+    <img src="https://i.imgur.com/dvKyt0B.png" width="120"/>
+    <br>
+    📊 Engineering Dashboard
+</h1>
 
-- [Remix Docs](https://remix.run/docs)
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-## Deployment
+- [Prerequisites](#prerequisites)
+- [Getting started](#getting-started)
 
-After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
+## Prerequisites
 
-```sh
-npm i -g vercel
-vercel
+This project requires a recent version of **node** and **yarn**. It's suggested
+to use [Volta](https://volta.sh/) to simplify the development process.
+
+```bash
+# install Volta
+curl https://get.volta.sh | bash
+
+# install required versions
+volta install node@16.13.1
+volta install yarn@1.22.11
 ```
 
-It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+Thanks to its [pinning mechanism](https://docs.volta.sh/reference/pin), Volta
+will know which version to use in Spaceship. The current versions of Node and
+Yarn used by Spaceship are available [here](package.json).
 
-## Development
+You can also manage node and yarn with NVM and YVM. Please refer to the versions
+pinned [here](package.json).
 
-To run your Remix app locally, make sure your project's local dependencies are installed:
+## Getting started
 
-```sh
-npm install
+```bash
+# Install all dependencies
+yarn
+# Start everything in dev mode
+yarn dev
 ```
-
-Afterwards, start the Remix development server like so:
-
-```sh
-npm run dev
-```
-
-Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
-
-If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
