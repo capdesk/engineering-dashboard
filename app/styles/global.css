@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@500&display=swap');
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --dark-1: #292929;
+  --dark-2: #2e2e2e;
+  --dark-3: #121212;
+  --grey-1: #dddddd;
+  --grey-2: #a29bb6;
+  --grey-3: #f4f6ff;
+  --gray-4: #414853;
+  --highlight-on: #1cffc0;
+  --highlight-off: #18e2aa;
+
+  --spacing-large: 32px;
+  --spacing-medium: 24px;
+  --spacing-small: 19px;
+  --nav-padding-x: 110px;
+  --nav-padding-y: 66px;
+
+  --size-xxl: 75px;
+}
+
+body {
+  background: var(--dark-1);
+  color: var(--grey-3);
+  font-family: 'Roboto Mono', monospace;
+}
+
+.sans-serif {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.gap-large {
+  gap: var(--spacing-large);
+}
+
+.gap-medium {
+  gap: var(--spacing-medium);
+}
+
+.gap-small {
+  gap: var(--spacing-small);
+}
+
+.padding-nav {
+  padding: var(--nav-padding-y) var(--nav-padding-x);
+}
+
+.bg-white {
+  background: var(--white);
+}
+
+.font-xxl {
+  font-size: var(--size-xxl);
+}
+
+.font-highlight {
+  color: var(--highlight-on);
+}
+
+.font-bolder {
+  font-weight: 900;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-light {
+  font-weight: 100;
+}
+
+.button {
+  background: var(--highlight-on);
+  color: var(--black);
+  border-radius: 500px;
+  padding: 14px 16.5px;
+  font-size: 14px;
+}
+
+.button--inverted {
+  background: var(--gray-4);
+  color: var(--highlight-on);
+  border-radius: 500px;
+  padding: 14px 16.5px;
+  font-size: 14px;
+}
+
+.button--inverted svg {
+  color: var(--highlight-on);
+  fill: var(--highlight-on);
+  stroke: var(--highlight-on);
+}
