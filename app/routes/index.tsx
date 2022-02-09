@@ -1,14 +1,12 @@
-import engineering from '~/assets/engineering.svg'
-import capdesk from '~/assets/capdesk.svg'
-import engineeringSmall from '~/assets/engineering-small.svg'
-import github from '~/assets/github.png'
-import heroku from '~/assets/heroku.png'
-import launchdarkly from '~/assets/launchdarkly.png'
-import datadog from '~/assets/datadog.png'
-import plus from '~/assets/plus.svg'
-import plusInverted from '~/assets/plus-inverted.svg'
-import {Radar} from '@nivo/radar'
-import {Calendar} from '@nivo/calendar'
+import engineering from '~/assets/images/engineering.svg'
+import capdesk from '~/assets/images/capdesk.svg'
+import engineeringSmall from '~/assets/images/engineering-small.svg'
+import github from '~/assets/images/github.png'
+import heroku from '~/assets/images/heroku.png'
+import launchdarkly from '~/assets/images/launchdarkly.png'
+import datadog from '~/assets/images/datadog.png'
+import plus from '~/assets/images/plus.svg'
+import plusInverted from '~/assets/images/plus-inverted.svg'
 
 const Button: React.FC<{inverted?: boolean}> = ({children, inverted}) => {
   return (
