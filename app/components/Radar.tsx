@@ -1,4 +1,4 @@
-import {Radar as BaseRadar} from '@nivo/radar'
+import { Radar as BaseRadar } from '@nivo/radar'
 
 const data = [
   {
@@ -27,16 +27,16 @@ const Radar: React.FC = () => (
     keys={['capdesk']}
     indexBy="taste"
     valueFormat=">-.2f"
-    margin={{top: 70, right: 80, bottom: 40, left: 80}}
-    borderColor={{from: 'color'}}
+    margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
+    borderColor={{ from: 'color' }}
     gridLabelOffset={36}
     dotSize={10}
-    dotColor={{theme: 'background'}}
+    dotColor={{ theme: 'background' }}
     dotBorderWidth={2}
-    colors={{scheme: 'nivo'}}
+    colors={{ scheme: 'nivo' }}
     blendMode="multiply"
     motionConfig="wobbly"
   />
 )
 
-export {Radar}
+export { Radar }
