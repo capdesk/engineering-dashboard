@@ -6,7 +6,18 @@
   "scripts": {
     "build": "remix build",
     "dev": "remix dev",
-    "postinstall": "remix setup node"
+    "postinstall": "remix setup node",
+    "lint": "eslint . --ext .ts,.tsx --fix",
+    "lint:staged": "eslint --fix",
+    "format": "prettier --write \"**/*.+(ts|jsx|tsx|json|md|yml)\"",
+    "format:staged": "prettier --write",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged --allow-empty"
+  },
+  "lint-staged": {
+    "*.(ts|tsx|json|md|yml)": "yarn format:staged",
+    "services/app/**/*.(ts|tsx)": "yarn lint:staged",
+    ".md": "doctoc"
   },
   "dependencies": {
     "@nivo/calendar": "^0.79.1",
@@ -21,9 +32,20 @@
     "remix": "^1.1.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
     "@remix-run/dev": "^1.1.3",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
+    "doctoc": "^2.1.0",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard-with-typescript": "^21.0.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.3",
+    "prettier": "^2.5.1",
     "typescript": "^4.1.2"
   },
   "engines": {
