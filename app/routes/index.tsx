@@ -13,7 +13,7 @@ import { Radar } from '~/components/Radar'
 
 const Button: React.FC<{ inverted?: boolean }> = ({ children, inverted }) => {
   return (
-    <div className={`button row ${inverted && 'button--inverted'}`}>
+    <div className={`button flex flex-row ${inverted && 'button--inverted'}`}>
       <img src={inverted ? plusInverted : plus} />
       {children && <span style={{ paddingLeft: '11px' }}>{children}</span>}
     </div>
@@ -21,12 +21,12 @@ const Button: React.FC<{ inverted?: boolean }> = ({ children, inverted }) => {
 }
 
 const Navbar: React.FC = () => (
-  <div className="row padding-nav align-center space-between">
-    <div className="row align-center gap-large ">
+  <div className="flex flex-row padding-nav items-center justify-between">
+    <div className="flex flex-row items-center gap-8 ">
       <img width="250" height="250" src={engineering} />
-      <div className="column">
+      <div className="flex flex-col">
         <img width="131" src={capdesk} />
-        <h1>
+        <h1 className="text-2xl">
           Engineers
           <br />
           Dashboard
@@ -38,8 +38,8 @@ const Navbar: React.FC = () => (
 )
 
 const Paragraph: React.FC = () => (
-  <div className="column gap-medium" style={{ width: '460px' }}>
-    <div className="row gap-small">
+  <div className="flex flex-col gap-6" style={{ width: '460px' }}>
+    <div className="flex flex-row gap-5">
       <Button inverted>NAV 1</Button>
       <Button inverted />
       <Button>NAV 2</Button>
@@ -55,7 +55,7 @@ const Paragraph: React.FC = () => (
 const RadarSection: React.FC = () => {
   return (
     <div
-      className="row justify-center align-center gap-large padding-large bg-white"
+      className="flex flex-row justify-center items-center gap-8 padding-large bg-white"
       style={{ height: '600px', padding: '63px 110px' }}
     >
       <Radar />
@@ -66,7 +66,7 @@ const RadarSection: React.FC = () => {
 const CalendarSection: React.FC = () => {
   return (
     <div
-      className="row justify-center align-center gap-large padding-large bg-white"
+      className="flex flex-row justify-center items-center gap-8 padding-large bg-white"
       style={{ height: '600px', padding: '63px 110px' }}
     >
       <Calendar />
@@ -81,12 +81,12 @@ const Stats: React.FC = () => {
     ['33.7%', '26.3.2022'],
     ['22.1%', '26.3.2022'],
   ]
-  const weights = ['bolder', 'bold', 'normal', 'light']
+  const weights = ['black', 'bold', 'normal', 'thin']
   return (
-    <div className="row space-between align-center gap-large padding-large " style={{ padding: '63px 110px' }}>
+    <div className="flex flex-row justify-between items-center gap-8 padding-large " style={{ padding: '63px 110px' }}>
       {stats.map(([percentage, date], index) => (
-        <div className="column">
-          <p className={`font-xxl font-highlight font-${weights[index]}`}>{percentage}</p>
+        <div key={date} className="flex flex-col">
+          <p className={`text-7xl font-highlight font-${weights[index]}`}>{percentage}</p>
           <p>{date}</p>
         </div>
       ))}
@@ -102,7 +102,10 @@ const Tools: React.FC = () => {
     launchdarkly,
   }
   return (
-    <div className="row space-between align-center gap-large padding-large bg-white" style={{ padding: '63px 110px' }}>
+    <div
+      className="flex flex-row justify-between items-center gap-8 padding-large bg-white"
+      style={{ padding: '63px 110px' }}
+    >
       {Object.entries(tools).map(([key, value]) => (
         <img key={key} src={value} />
       ))}
@@ -111,7 +114,7 @@ const Tools: React.FC = () => {
 }
 
 const Footer: React.FC = () => (
-  <div className="row align-center gap-large padding-nav" style={{ height: '172px' }}>
+  <div className="flex flex-row items-center gap-8 padding-nav" style={{ height: '172px' }}>
     <img width="84" src={engineeringSmall} />
   </div>
 )

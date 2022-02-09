@@ -18,7 +18,7 @@ const Calendar: React.FC = () => (
     legends={[
       {
         anchor: 'bottom-right',
-        direction: 'row',
+        direction: 'flex flex-row',
         translateY: 36,
         itemCount: 4,
         itemWidth: 42,

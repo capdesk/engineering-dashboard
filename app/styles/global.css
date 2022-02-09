@@ -33,74 +33,12 @@ body {
   line-height: 1.5;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.space-between {
-  justify-content: space-between;
-}
-
-h1 {
-  font-size: 24px;
-}
-
-.gap-large {
-  gap: var(--spacing-large);
-}
-
-.gap-medium {
-  gap: var(--spacing-medium);
-}
-
-.gap-small {
-  gap: var(--spacing-small);
-}
-
 .padding-nav {
   padding: var(--nav-padding-y) var(--nav-padding-x);
 }
 
-.bg-white {
-  background: var(--white);
-}
-
-.font-xxl {
-  font-size: var(--size-xxl);
-}
-
 .font-highlight {
   color: var(--highlight-on);
-}
-
-.font-bolder {
-  font-weight: 900;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-.font-normal {
-  font-weight: 400;
-}
-
-.font-light {
-  font-weight: 100;
 }
 
 .button {
@@ -117,10 +55,4 @@ h1 {
   border-radius: 500px;
   padding: 14px 16.5px;
   font-size: 14px;
-}
-
-.button--inverted svg {
-  color: var(--highlight-on);
-  fill: var(--highlight-on);
-  stroke: var(--highlight-on);
 }
