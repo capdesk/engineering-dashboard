@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Trim Mono';
+  src: url('/fonts/TrimMono/TrimMono-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Trim Mono';
+  font-weight: bold;
+  src: url('/fonts/TrimMono/TrimMono-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Trim';
+  src: url('/fonts/Trim/Trim-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Trim';
+  font-weight: bold;
+  src: url('/fonts/Trim/Trim-Bold.otf') format('opentype');
+}

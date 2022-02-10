@@ -26,7 +26,7 @@ const Navbar: React.FC = () => (
       <img width="250" height="250" src={engineering} />
       <div className="flex flex-col">
         <img width="131" src={capdesk} />
-        <h1 className="text-2xl">
+        <h1 className="font-mono text-2xl">
           Engineers
           <br />
           Dashboard
@@ -38,15 +38,15 @@ const Navbar: React.FC = () => (
 )
 
 const Paragraph: React.FC = () => (
-  <div className="flex flex-col gap-6" style={{ width: '460px' }}>
+  <div className="font-mono flex flex-col gap-6" style={{ width: '460px' }}>
     <div className="flex flex-row gap-5">
       <Button inverted>NAV 1</Button>
       <Button inverted />
       <Button>NAV 2</Button>
       <Button inverted>NAV 3</Button>
     </div>
-    <h2 className="sans-serif">Here's a title style in trim</h2>
-    <p className="sans-serif">
+    <h2 className="font-sans">Here's a title style in trim</h2>
+    <p className="font-sans">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, <span className="font-highlight">sed do eiusmod</span>
       &nbsp;tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
     </p>
@@ -77,9 +77,9 @@ const CalendarSection: React.FC = () => {
 const Stats: React.FC = () => {
   const stats = [
     ['67.3%', '26.3.2022'],
-    ['42.4%', '26.3.2022'],
-    ['33.7%', '26.3.2022'],
-    ['22.1%', '26.3.2022'],
+    ['42.4%', '25.3.2022'],
+    ['33.7%', '24.3.2022'],
+    ['22.1%', '23.3.2022'],
   ]
   const weights = ['black', 'bold', 'normal', 'thin']
   return (

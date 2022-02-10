@@ -6,7 +6,10 @@ module.exports = {
     },
   ],
   theme: {
-    fontFamily: {},
+    fontFamily: {
+      sans: ['Trim'],
+      mono: ['Trim Mono'],
+    },
     extend: {},
   },
   variants: {},

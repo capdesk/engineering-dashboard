@@ -25,12 +25,6 @@
 body {
   background: var(--dark-1);
   color: var(--grey-3);
-  font-family: 'Roboto Mono', monospace;
-}
-
-.sans-serif {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.5;
 }
 
 .padding-nav {
