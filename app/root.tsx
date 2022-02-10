@@ -1,6 +1,6 @@
 import type { MetaFunction } from 'remix'
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from 'remix'
-import styles from '~/styles/global.css'
+
 import reset from '~/styles/reset.css'
 import fonts from '~/styles/fonts.css'
 import tailwind from './tailwind.css'
@@ -9,7 +9,6 @@ export function links() {
   return [
     { rel: 'stylesheet', href: reset },
     { rel: 'stylesheet', href: tailwind },
-    { rel: 'stylesheet', href: styles },
     { rel: 'stylesheet', href: fonts },
   ]
 }

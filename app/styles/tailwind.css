@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  body {
+    @apply bg-dark-100 text-gray-300;
+  }
+
+  .padding-nav {
+    @apply py-16 px-28;
+  }
+
+  .button {
+    @apply bg-highlight-on hover:bg-grey-400 text-black hover:text-highlight-on text-sm rounded-full cursor-pointer p-3;
+  }
+
+  .button--inverted {
+    @apply bg-grey-400 hover:bg-highlight-on text-highlight-on hover:text-black;
+  }
+}

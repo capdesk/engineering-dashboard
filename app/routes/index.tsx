@@ -5,20 +5,10 @@ import github from '~/assets/images/github.png'
 import heroku from '~/assets/images/heroku.png'
 import launchdarkly from '~/assets/images/launchdarkly.png'
 import datadog from '~/assets/images/datadog.png'
-import plus from '~/assets/images/plus.svg'
-import plusInverted from '~/assets/images/plus-inverted.svg'
 
 import { Calendar } from '~/components/Calendar'
 import { Radar } from '~/components/Radar'
-
-const Button: React.FC<{ inverted?: boolean }> = ({ children, inverted }) => {
-  return (
-    <div className={`button flex flex-row ${inverted && 'button--inverted'}`}>
-      <img src={inverted ? plusInverted : plus} />
-      {children && <span style={{ paddingLeft: '11px' }}>{children}</span>}
-    </div>
-  )
-}
+import { Button } from '~/components/Button'
 
 const Navbar: React.FC = () => (
   <div className="flex flex-row padding-nav items-center justify-between">
@@ -47,7 +37,7 @@ const Paragraph: React.FC = () => (
     </div>
     <h2 className="font-sans">Here's a title style in trim</h2>
     <p className="font-sans">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, <span className="font-highlight">sed do eiusmod</span>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, <span className="text-highlight-on">sed do eiusmod</span>
       &nbsp;tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
     </p>
   </div>
@@ -86,7 +76,7 @@ const Stats: React.FC = () => {
     <div className="flex flex-row justify-between items-center gap-8 padding-large " style={{ padding: '63px 110px' }}>
       {stats.map(([percentage, date], index) => (
         <div key={date} className="flex flex-col">
-          <p className={`text-7xl font-highlight font-${weights[index]}`}>{percentage}</p>
+          <p className={`text-7xl text-highlight-on font-${weights[index]}`}>{percentage}</p>
           <p>{date}</p>
         </div>
       ))}
