@@ -11,33 +11,77 @@ import { Radar } from '~/components/Radar'
 import { Button } from '~/components/Button'
 
 const Navbar: React.FC = () => (
-  <div className="flex flex-row p-16 items-center justify-between">
-    <div className="flex flex-row items-center gap-8 w-1/2">
-      <img width="250" height="250" src={engineering} />
-      <div className="flex flex-col">
-        <img width="131" src={capdesk} />
-        <h1 className="font-mono text-2xl">Engineers Dashboard</h1>
-      </div>
+  <div className="flex flex-row py-8 px-16 items-center justify-between bg-dark-300">
+    <img height="37" src={capdesk} />
+    <p className="font-mono text-2xl">Engineers Dashboard</p>
+    <div className="flex flex-row gap-4 w1/3">
+      <Button>RESOURCES</Button>
+      <Button inverted>TEAM</Button>
     </div>
-    <Paragraph />
   </div>
 )
 
-const Paragraph: React.FC = () => (
-  <div className="font-mono flex flex-col gap-5 w-1/2">
-    <div className="flex flex-row gap-5">
-      <Button inverted>NAV 1</Button>
-      <Button inverted />
-      <Button>NAV 2</Button>
-      <Button inverted>NAV 3</Button>
-    </div>
-    <h2 className="font-sans text-3xl">Here's a title style in trim</h2>
-    <p className="font-sans text-xl">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, <span className="text-highlight-on">sed do eiusmod</span>
-      &nbsp;tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-    </p>
+const Circle: React.FC<{ className?: string }> = ({ className }) => (
+  <div className={`block py-2 ${className}`}>
+    <div className={`w-4 h-4 border-2 border-highlight-on rounded-full ${className}`} />
   </div>
 )
+
+const Main: React.FC = () => (
+  <div className="px-14 pt-8">
+    <div className="flex flex-row items-center gap-5 pb-2">
+      <img src={engineering} width="250" />
+      <div className="flex flex-col">
+        <h1 className="text-5xl font-mono text-highlight-on text-light">Main title goes here</h1>
+        <div className="flex flex-row items-center">
+          <span className="my-4 border-b divide-gray-200 flex-1" />
+          <Circle />
+        </div>
+        <div className="flex flex-col gap-4">
+          <span className="text-mono text-xl">12.02.2022</span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam.
+        </div>
+      </div>
+    </div>
+    <div className="flex flex-row justify-between">
+      <div className="flex justify-end" style={{ width: '125px', paddingLeft: '125px' }}>
+        <span className="border-2 h-full" />
+      </div>
+      <Stats />
+    </div>
+  </div>
+)
+
+const Section: React.FC<{ light?: boolean }> = ({ light }) => {
+  const bg = light ? 'bg-dark-200' : 'bg-dark-300'
+  return (
+    <div className={`px-14 ${bg}`}>
+      <div className="flex flex-row">
+        <div className="flex justify-end" style={{ width: '125px', paddingLeft: '125px' }}>
+          <span className="border-2 h-full" />
+        </div>
+        <div>
+          <div className="flex flex-row items-start gap-7 py-6" style={{ marginLeft: '-10px' }}>
+            <Circle className={bg} />
+            <div>
+              <h2 className="text-4xl font-mono text-highlight-on text-light">Key Metrics 2</h2>
+              <div className="flex flex-col gap-8 py-4">
+                <h3 className="text-xl">Loremm ipsum dolor</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam.
+                </p>
+                <a className="text-orangeish">link here</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const RadarSection: React.FC = () => {
   return (
     <div className="flex flex-row justify-center items-center gap-8 bg-white py-16 px-28" style={{ height: '600px' }}>
@@ -56,18 +100,22 @@ const CalendarSection: React.FC = () => {
 
 const Stats: React.FC = () => {
   const stats = [
-    ['67.3%', '26.3.2022'],
-    ['42.4%', '25.3.2022'],
-    ['33.7%', '24.3.2022'],
-    ['22.1%', '23.3.2022'],
+    ['75%', '26.3.2022'],
+    ['12%', '25.3.2022'],
+    ['6%', '24.3.2022'],
+    ['26%', '23.3.2022'],
   ]
-  const weights = ['black', 'bold', 'normal', 'thin']
+  const weights = ['bold', 'normal', 'normal', 'normal']
+  const colors = ['highlight-on ', 'white', 'white', 'text-white']
   return (
-    <div className="flex flex-row justify-between items-center gap-8 py-16 px-28">
+    <div className="flex flex-row justify-between items-center gap-32 py-16">
       {stats.map(([percentage, date], index) => (
-        <div key={date} className="flex flex-col">
-          <p className={`text-7xl text-highlight-on font-${weights[index]}`}>{percentage}</p>
-          <p>{date}</p>
+        <div
+          key={date}
+          className={`flex flex-col items-center justify-center border-4 text-${colors[index]} border-current rounded-full`}
+          style={{ width: '150px', height: '150px' }}
+        >
+          <p className={`text-5xl text-mono font-${weights[index]}`}>{percentage}</p>
         </div>
       ))}
     </div>
@@ -100,7 +148,10 @@ export default function Index() {
   return (
     <div>
       <Navbar />
-      <Stats />
+      <Main />
+      <Section />
+      <Section light />
+      <Section />
       <RadarSection />
       <CalendarSection />
       <Tools />
