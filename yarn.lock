@@ -640,7 +640,7 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/prop-types@*":
+"@types/prop-types@*", "@types/prop-types@^15.7.3":
   version "15.7.4"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
   integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
@@ -4210,7 +4210,7 @@ promise-inflight@^1.0.1:
   resolved "https://registry.yarnpkg.com/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
   integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
 
-prop-types@^15.8.1:
+prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -4323,6 +4323,15 @@ react-router@6.2.1:
   integrity sha512-2fG0udBtxou9lXtK97eJeET2ki5//UWfQSl1rlJ7quwe6jrktK9FCCc8dQb5QY6jAv3jua8bBQRhhDOM/kVRsg==
   dependencies:
     history "^5.2.0"
+
+react-xarrows@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-xarrows/-/react-xarrows-2.0.2.tgz#7555687612339eaefd4ed55fc5c63f2302726d9c"
+  integrity sha512-tDlAqaxHNmy0vegW/6NdhoWyXJq1LANX/WUAlHyzoHe9BwFVnJPPDghmDjYeVr7XWFmBrVTUrHsrW7GKYI6HtQ==
+  dependencies:
+    "@types/prop-types" "^15.7.3"
+    lodash "^4.17.21"
+    prop-types "^15.7.2"
 
 react@^17.0.2:
   version "17.0.2"

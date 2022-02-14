@@ -9,6 +9,7 @@ import datadog from '~/assets/images/datadog.png'
 import { Calendar } from '~/components/Calendar'
 import { Radar } from '~/components/Radar'
 import { Button } from '~/components/Button'
+import Xarrow from 'react-xarrows'
 
 const Navbar: React.FC = () => (
   <div className="flex flex-row py-8 px-16 items-center justify-between bg-dark-300">
@@ -21,8 +22,8 @@ const Navbar: React.FC = () => (
   </div>
 )
 
-const Circle: React.FC<{ className?: string }> = ({ className }) => (
-  <div className={`block py-2 ${className}`}>
+const Circle: React.FC<{ id?: string; className?: string }> = ({ id, className }) => (
+  <div id={id} className={`block py-2 ${className} z-10`}>
     <div className={`w-4 h-4 border-2 border-highlight-on rounded-full ${className}`} />
   </div>
 )
@@ -33,8 +34,8 @@ const Main: React.FC = () => (
       <img src={engineering} width="250" />
       <div className="flex flex-col">
         <h1 className="text-5xl font-mono text-highlight-on text-light">Main title goes here</h1>
-        <div className="flex flex-row items-center">
-          <span className="my-4 border-b divide-gray-200 flex-1" />
+        <div className="flex flex-row items-center gap-2">
+          <span className="my-4 border-b-2 divide-gray-200 flex-1" />
           <Circle />
         </div>
         <div className="flex flex-col gap-4">
@@ -53,7 +54,12 @@ const Main: React.FC = () => (
   </div>
 )
 
-const Section: React.FC<{ light?: boolean }> = ({ light }) => {
+const Section: React.FC<{ light?: boolean; title: string; circleId?: string }> = ({
+  light,
+  title,
+  children,
+  circleId,
+}) => {
   const bg = light ? 'bg-dark-200' : 'bg-dark-300'
   return (
     <div className={`px-14 ${bg}`}>
@@ -61,19 +67,12 @@ const Section: React.FC<{ light?: boolean }> = ({ light }) => {
         <div className="flex justify-end" style={{ width: '125px', paddingLeft: '125px' }}>
           <span className="border-2 h-full" />
         </div>
-        <div>
+        <div className="w-full">
           <div className="flex flex-row items-start gap-7 py-6" style={{ marginLeft: '-10px' }}>
-            <Circle className={bg} />
-            <div>
-              <h2 className="text-4xl font-mono text-highlight-on text-light">Key Metrics 2</h2>
-              <div className="flex flex-col gap-8 py-4">
-                <h3 className="text-xl">Loremm ipsum dolor</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam.
-                </p>
-                <a className="text-orangeish">link here</a>
-              </div>
+            <Circle id={circleId} className={bg} />
+            <div className="w-full">
+              <h2 className="text-4xl font-mono text-highlight-on text-light">{title}</h2>
+              <div>{children}</div>
             </div>
           </div>
         </div>
@@ -130,31 +129,97 @@ const Tools: React.FC = () => {
     launchdarkly,
   }
   return (
-    <div className="flex flex-row justify-between items-center gap-8 bg-white py-16 px-28">
+    <div className="flex flex-row justify-evenly items-center py-16 w-full">
       {Object.entries(tools).map(([key, value]) => (
-        <img key={key} src={value} />
+        <div>
+          <img key={key} src={value} />
+        </div>
       ))}
     </div>
   )
 }
 
 const Footer: React.FC = () => (
-  <div className="flex flex-row items-center gap-8 p-16 h-44">
-    <img width="84" src={engineeringSmall} />
+  <div className="px-14 py-12 bg-dark-300">
+    <div className="flex flex-col">
+      <div className="flex flex-col justify-end items-center" style={{ width: '250px', marginLeft: '-2px' }}>
+        <Circle className="bg-dark-300" id="footer" />
+        <Xarrow
+          start="tools" //can be react ref
+          end="footer" //or an id
+          lineColor="#dddddd"
+          showHead={false}
+          endAnchor="top"
+        />
+        <img width="84" src={engineeringSmall} />
+      </div>
+    </div>
   </div>
 )
 
 export default function Index() {
+  const Placeholder = () => (
+    <>
+      <div className="flex flex-col gap-8 py-4">
+        <h3 className="text-xl">Loremm ipsum dolor</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam.
+        </p>
+        <a href="#" className="text-orangeish">
+          link here
+        </a>
+      </div>
+    </>
+  )
   return (
     <div>
       <Navbar />
       <Main />
-      <Section />
-      <Section light />
-      <Section />
-      <RadarSection />
-      <CalendarSection />
-      <Tools />
+      <Section title="first section">
+        <Placeholder />
+      </Section>
+      <Section title="second section" light>
+        <Placeholder />
+      </Section>
+      <Section title="third section">
+        <Placeholder />
+      </Section>
+      <Section title="Contribution" light>
+        <RadarSection />
+      </Section>
+      <Section title="The Team" circleId="hiring-arrow">
+        <div className="flex flex-row justify-end">
+          <div className="w-1/2">
+            <Placeholder />
+            <Placeholder />
+            <Placeholder />
+          </div>
+        </div>
+        <Xarrow
+          start="hiring-arrow" //can be react ref
+          end="hiring-circle" //or an id
+          lineColor="#dddddd"
+          showHead={false}
+          endAnchor="left"
+        />
+        <div className="flex flex-col gap-4 py-4 m-auto w-1/2">
+          <div className="flex flex-row items-center gap-4" style={{ marginLeft: '-56px' }}>
+            <Circle id="hiring-circle" className="ml-3" />
+            <h3 className="text-xl">Interested in joining the team?</h3>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam.
+          </p>
+          <a href="#" className="text-orangeish">
+            link here
+          </a>
+        </div>
+      </Section>
+      <Section title="The tools we use" light circleId="tools">
+        <Tools />
+      </Section>
       <Footer />
     </div>
   )
