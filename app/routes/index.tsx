@@ -1,59 +1,21 @@
+import datadog from '~/assets/images/datadog.png'
 import engineering from '~/assets/images/engineering.svg'
-import capdesk from '~/assets/images/capdesk.svg'
-import engineeringSmall from '~/assets/images/engineering-small.svg'
 import github from '~/assets/images/github.png'
 import heroku from '~/assets/images/heroku.png'
 import launchdarkly from '~/assets/images/launchdarkly.png'
-import datadog from '~/assets/images/datadog.png'
-
+import Arrow from '~/components/Arrow'
 import { Calendar } from '~/components/Calendar'
+import Circle from '~/components/Circle'
+import Footer from '~/components/layout/Footer'
+import Section from '~/components/layout/Section'
+import Navbar from '~/components/Navbar'
 import { Radar } from '~/components/Radar'
-import { Button } from '~/components/Button'
-import Xarrow, { xarrowPropsType } from 'react-xarrows'
-import { Link } from 'remix'
-import { useState, useEffect, useLayoutEffect } from 'react'
-
-const Arrow: React.FC<xarrowPropsType> = (props) => {
-  const [showChild, setShowChild] = useState(false)
-
-  // Wait until after client-side hydration to show
-  useEffect(() => {
-    setShowChild(true)
-  }, [])
-
-  if (!showChild) {
-    return null
-  }
-
-  return <Xarrow {...props} />
-}
-
-const Navbar: React.FC = () => (
-  <div className="flex flex-row py-8 px-16 items-center justify-between bg-dark-300">
-    <img height="37" src={capdesk} />
-    <p className="font-mono text-2xl">Engineers Dashboard</p>
-    <div className="flex flex-row gap-4 w1/3">
-      <Link to="/resources">
-        <Button>RESOURCES</Button>
-      </Link>
-      <Link to="/team">
-        <Button inverted>TEAM</Button>
-      </Link>
-    </div>
-  </div>
-)
-
-const Circle: React.FC<{ id?: string; className?: string }> = ({ id, className }) => (
-  <div id={id} className={`block py-2 ${className} z-10`}>
-    <div className={`w-4 h-4 border-2 border-highlight-on rounded-full ${className}`} />
-  </div>
-)
 
 const Main: React.FC = () => (
   <div className="px-14 pt-8">
     <div className="flex flex-row items-center gap-5 pb-2">
       <img src={engineering} width="250" />
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <h1 className="text-5xl font-mono text-highlight-on text-light">Main title goes here</h1>
         <div className="flex flex-row items-center gap-2">
           <span className="my-4 border-b-2 divide-gray-200 flex-1" />
@@ -74,33 +36,6 @@ const Main: React.FC = () => (
     </div>
   </div>
 )
-
-const Section: React.FC<{ light?: boolean; title: string; circleId?: string }> = ({
-  light,
-  title,
-  children,
-  circleId,
-}) => {
-  const bg = light ? 'bg-dark-200' : 'bg-dark-300'
-  return (
-    <div className={`px-14 ${bg}`}>
-      <div className="flex flex-row">
-        <div className="flex justify-end" style={{ width: '125px', paddingLeft: '125px' }}>
-          <span className="border-2 h-full" />
-        </div>
-        <div className="w-full">
-          <div className="flex flex-row items-start gap-7 py-6" style={{ marginLeft: '-10px' }}>
-            <Circle id={circleId} className={bg} />
-            <div className="w-full">
-              <h2 className="text-4xl font-mono text-highlight-on text-light">{title}</h2>
-              <div>{children}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 const RadarSection: React.FC = () => {
   return (
@@ -160,24 +95,6 @@ const Tools: React.FC = () => {
   )
 }
 
-const Footer: React.FC = () => (
-  <div className="px-14 py-12 bg-dark-300">
-    <div className="flex flex-col">
-      <div className="flex flex-col justify-end items-center" style={{ width: '250px', marginLeft: '-2px' }}>
-        <Circle className="bg-dark-300" id="footer" />
-        <Arrow
-          start="tools" //can be react ref
-          end="footer" //or an id
-          lineColor="#dddddd"
-          showHead={false}
-          endAnchor="top"
-        />
-        <img width="84" src={engineeringSmall} />
-      </div>
-    </div>
-  </div>
-)
-
 export default function Index() {
   const Placeholder = () => (
     <>
@@ -217,13 +134,7 @@ export default function Index() {
             <Placeholder />
           </div>
         </div>
-        <Arrow
-          start="hiring-arrow" //can be react ref
-          end="hiring-circle" //or an id
-          lineColor="#dddddd"
-          showHead={false}
-          endAnchor="left"
-        />
+        <Arrow start="hiring-arrow" end="hiring-circle" lineColor="#dddddd" showHead={false} endAnchor="left" />
         <div className="flex flex-col gap-4 py-4 m-auto w-1/2">
           <div className="flex flex-row items-center gap-4" style={{ marginLeft: '-56px' }}>
             <Circle id="hiring-circle" className="ml-3" />
