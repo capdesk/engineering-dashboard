@@ -18,4 +18,11 @@
   .button--inverted {
     @apply bg-grey-400 hover:bg-highlight-on text-highlight-on hover:text-black;
   }
+
+  .text-gradient {
+    font-size: 72px;
+    background: -webkit-linear-gradient(right, #c9ffef, #1cffc0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
