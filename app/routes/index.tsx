@@ -7,6 +7,7 @@ import { Calendar } from '~/components/Calendar'
 import Circle from '~/components/Circle'
 import Hero from '~/components/layout/Hero'
 import HomeSection from '~/components/layout/HomeSection'
+import Placeholder from '~/components/Placeholder'
 import { Radar } from '~/components/Radar'
 
 const RadarSection: React.FC = () => {
@@ -68,20 +69,6 @@ const Tools: React.FC = () => {
 }
 
 export default function Index() {
-  const Placeholder = () => (
-    <>
-      <div className="flex flex-col gap-8 py-4">
-        <h3 className="text-xl">Loremm ipsum dolor</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam.
-        </p>
-        <a href="#" className="text-orangeish">
-          link here
-        </a>
-      </div>
-    </>
-  )
   return (
     <div>
       <Hero title="Main title goes here" extra={<Stats />}>
