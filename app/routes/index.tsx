@@ -9,15 +9,36 @@ import datadog from '~/assets/images/datadog.png'
 import { Calendar } from '~/components/Calendar'
 import { Radar } from '~/components/Radar'
 import { Button } from '~/components/Button'
-import Xarrow from 'react-xarrows'
+import Xarrow, { xarrowPropsType } from 'react-xarrows'
+import { Link } from 'remix'
+import { useState, useEffect, useLayoutEffect } from 'react'
+
+const Arrow: React.FC<xarrowPropsType> = (props) => {
+  const [showChild, setShowChild] = useState(false)
+
+  // Wait until after client-side hydration to show
+  useEffect(() => {
+    setShowChild(true)
+  }, [])
+
+  if (!showChild) {
+    return null
+  }
+
+  return <Xarrow {...props} />
+}
 
 const Navbar: React.FC = () => (
   <div className="flex flex-row py-8 px-16 items-center justify-between bg-dark-300">
     <img height="37" src={capdesk} />
     <p className="font-mono text-2xl">Engineers Dashboard</p>
     <div className="flex flex-row gap-4 w1/3">
-      <Button>RESOURCES</Button>
-      <Button inverted>TEAM</Button>
+      <Link to="/resources">
+        <Button>RESOURCES</Button>
+      </Link>
+      <Link to="/team">
+        <Button inverted>TEAM</Button>
+      </Link>
     </div>
   </div>
 )
@@ -144,7 +165,7 @@ const Footer: React.FC = () => (
     <div className="flex flex-col">
       <div className="flex flex-col justify-end items-center" style={{ width: '250px', marginLeft: '-2px' }}>
         <Circle className="bg-dark-300" id="footer" />
-        <Xarrow
+        <Arrow
           start="tools" //can be react ref
           end="footer" //or an id
           lineColor="#dddddd"
@@ -196,7 +217,7 @@ export default function Index() {
             <Placeholder />
           </div>
         </div>
-        <Xarrow
+        <Arrow
           start="hiring-arrow" //can be react ref
           end="hiring-circle" //or an id
           lineColor="#dddddd"
