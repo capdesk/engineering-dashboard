@@ -1,41 +1,13 @@
 import datadog from '~/assets/images/datadog.png'
-import engineering from '~/assets/images/engineering.svg'
 import github from '~/assets/images/github.png'
 import heroku from '~/assets/images/heroku.png'
 import launchdarkly from '~/assets/images/launchdarkly.png'
 import Arrow from '~/components/Arrow'
 import { Calendar } from '~/components/Calendar'
 import Circle from '~/components/Circle'
-import Footer from '~/components/layout/Footer'
-import Section from '~/components/layout/Section'
-import Navbar from '~/components/Navbar'
+import Hero from '~/components/layout/Hero'
+import HomeSection from '~/components/layout/HomeSection'
 import { Radar } from '~/components/Radar'
-
-const Main: React.FC = () => (
-  <div className="px-14 pt-8">
-    <div className="flex flex-row items-center gap-5 pb-2">
-      <img src={engineering} width="250" />
-      <div className="flex flex-col w-full">
-        <h1 className="text-5xl font-mono text-highlight-on text-light">Main title goes here</h1>
-        <div className="flex flex-row items-center gap-2">
-          <span className="my-4 border-b-2 divide-gray-200 flex-1" />
-          <Circle />
-        </div>
-        <div className="flex flex-col gap-4">
-          <span className="text-mono text-xl">12.02.2022</span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam.
-        </div>
-      </div>
-    </div>
-    <div className="flex flex-row justify-between">
-      <div className="flex justify-end" style={{ width: '125px', paddingLeft: '125px' }}>
-        <span className="border-2 h-full" />
-      </div>
-      <Stats />
-    </div>
-  </div>
-)
 
 const RadarSection: React.FC = () => {
   return (
@@ -112,21 +84,24 @@ export default function Index() {
   )
   return (
     <div>
-      <Navbar />
-      <Main />
-      <Section title="first section">
+      <Hero title="Main title goes here" extra={<Stats />}>
+        <span className="text-mono text-xl">12.02.2022</span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam.
+      </Hero>
+      <HomeSection title="first section">
         <Placeholder />
-      </Section>
-      <Section title="second section" light>
+      </HomeSection>
+      <HomeSection title="second section" light>
         <Placeholder />
-      </Section>
-      <Section title="third section">
+      </HomeSection>
+      <HomeSection title="third section">
         <Placeholder />
-      </Section>
-      <Section title="Contribution" light>
+      </HomeSection>
+      <HomeSection title="Contribution" light>
         <RadarSection />
-      </Section>
-      <Section title="The Team" circleId="hiring-arrow">
+      </HomeSection>
+      <HomeSection title="The Team" circleId="hiring-arrow">
         <div className="flex flex-row justify-end">
           <div className="w-1/2">
             <Placeholder />
@@ -148,11 +123,10 @@ export default function Index() {
             link here
           </a>
         </div>
-      </Section>
-      <Section title="The tools we use" light circleId="tools">
+      </HomeSection>
+      <HomeSection title="The tools we use" light circleId="tools">
         <Tools />
-      </Section>
-      <Footer />
+      </HomeSection>
     </div>
   )
 }

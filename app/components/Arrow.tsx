@@ -7,13 +7,14 @@ const Arrow: React.FC<xarrowPropsType> = (props) => {
   // Wait until after client-side hydration to show
   useEffect(() => {
     setShowChild(true)
+    return () => setShowChild(false)
   }, [])
 
   if (!showChild) {
     return null
   }
 
-  return <Xarrow {...props} lineColor="#dddddd" showHead={false} />
+  return <Xarrow {...props} lineColor="#dddddd" showHead={false} showXarrow={showChild} />
 }
 
 export default Arrow
