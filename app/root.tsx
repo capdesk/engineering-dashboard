@@ -1,17 +1,18 @@
+import progress from 'react-circular-progressbar/dist/styles.css'
 import type { MetaFunction } from 'remix'
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from 'remix'
-
-import reset from '~/styles/reset.css'
-import fonts from '~/styles/fonts.css'
-import tailwind from './tailwind.css'
 import Footer from '~/components/layout/Footer'
 import Navbar from '~/components/Navbar'
+import fonts from '~/styles/fonts.css'
+import reset from '~/styles/reset.css'
+import tailwind from './tailwind.css'
 
 export function links() {
   return [
     { rel: 'stylesheet', href: reset },
     { rel: 'stylesheet', href: tailwind },
     { rel: 'stylesheet', href: fonts },
+    { rel: 'stylesheet', href: progress },
   ]
 }
 

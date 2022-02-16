@@ -5,7 +5,7 @@ module.exports = {
       pattern: /font-(black|bold|normal|thin)/,
     },
     {
-      pattern: /(divide|text)-(white|highlight-on)/,
+      pattern: /(divide|text|stroke)-(white|highlight-on)/,
     },
     {
       pattern: /(bg)-(grey|dark)-(100|200|300)/,
