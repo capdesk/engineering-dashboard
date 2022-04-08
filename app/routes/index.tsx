@@ -3,6 +3,7 @@ import { json, useLoaderData } from 'remix'
 import Arrow from '~/components/Arrow'
 import { Calendar } from '~/components/Calendar'
 import Circle from '~/components/Circle'
+import Deployments from '~/components/home/Deployments'
 import Languages from '~/components/home/Languages'
 import Stats from '~/components/home/Languages'
 import Tools from '~/components/home/Toolts'
@@ -58,9 +59,11 @@ export default function Index() {
           <span className="text-2xl text-light text-white font-mono pr-6 self-end lg:self-start">{date}</span>
         </div>
       </Hero>
-      <HomeSection title="Language distribution">{<Languages languages={data.languages} />}</HomeSection>
-      <HomeSection title="second section" light>
-        <Placeholder />
+      <HomeSection title="Language distribution">
+        <Languages languages={data.languages} />
+      </HomeSection>
+      <HomeSection title="Deployments" light>
+        <Deployments releases={data.releases} />
       </HomeSection>
       <HomeSection title="third section">
         <Placeholder />
