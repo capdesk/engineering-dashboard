@@ -33,7 +33,7 @@ const Deployments = ({ releases }: Pick<Data, 'releases'>) => {
   const sortedData = [futureMonths, pastMonths].flat()
 
   return (
-    <div className="flex flex-col xl:p-32 xl:pb-8 pb-0 gap-16 xl:gap-32 pt-16 xl:pt-32">
+    <div className="flex flex-col xl:p-24 xl:pb-8 pb-0 gap-16 xl:gap-32 pt-16 xl:pt-32">
       <div className="w-full h-80">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart

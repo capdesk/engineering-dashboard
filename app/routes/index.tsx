@@ -3,6 +3,7 @@ import { json, useLoaderData } from 'remix'
 import Arrow from '~/components/Arrow'
 import { Calendar } from '~/components/Calendar'
 import Circle from '~/components/Circle'
+import Contributions from '~/components/home/Contributions'
 import Deployments from '~/components/home/Deployments'
 import Languages from '~/components/home/Languages'
 import Stats from '~/components/home/Languages'
@@ -22,7 +23,7 @@ type Data = {
   contributions: Record<string, Week[]>
   coverage: number
   languages: Record<string, LanguageData>
-  pull_request: number
+  pull_requests: number
   releases: string[]
   workflow_runs: number
 }
@@ -45,7 +46,7 @@ export async function loader() {
 }
 
 export default function Index() {
-  const data = useLoaderData<Data>()
+  const { languages, releases, coverage, contributions, pull_requests, commits, workflow_runs } = useLoaderData<Data>()
 
   return (
     <div>
@@ -60,18 +61,21 @@ export default function Index() {
         </div>
       </Hero>
       <HomeSection title="Language distribution">
-        <Languages languages={data.languages} />
+        <Languages languages={languages} />
       </HomeSection>
       <HomeSection title="Deployments" light>
-        <Deployments releases={data.releases} />
+        <Deployments releases={releases} />
       </HomeSection>
-      <HomeSection title="third section">
-        <Placeholder />
+      <HomeSection title="Contributions">
+        <Contributions
+          contributions={contributions}
+          coverage={coverage}
+          pull_requests={pull_requests}
+          commits={commits}
+          workflow_runs={workflow_runs}
+        />
       </HomeSection>
-      <HomeSection title="Contribution" light>
-        Hello
-      </HomeSection>
-      <HomeSection title="The Team" circleId="hiring-arrow">
+      <HomeSection title="The Team" circleId="hiring-arrow" light>
         <div className="flex flex-row justify-end">
           <div className="w-1/2">
             <Placeholder />
@@ -94,7 +98,7 @@ export default function Index() {
           </a>
         </div>
       </HomeSection>
-      <HomeSection title="The tools we use" light circleId="tools">
+      <HomeSection title="The tools we use" circleId="tools">
         <Tools />
       </HomeSection>
     </div>

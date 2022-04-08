@@ -24,7 +24,7 @@ const Languages = ({ languages }: Pick<Data, 'languages'>) => {
     .slice(0, 5)
 
   return (
-    <div className="flex flex-col xl:p-32 xl:pb-8 pb-0 gap-16 xl:gap-32 pt-16 xl:pt-32">
+    <div className="flex flex-col xl:p-24 xl:pb-8 pb-0 gap-16 xl:gap-32 pt-16 xl:pt-32">
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         {sortedLanguages.map(([name, { percentage }], index) => (
           <Percentage key={name} index={index} name={name} percentage={percentage} />
