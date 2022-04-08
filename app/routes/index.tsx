@@ -1,17 +1,14 @@
 import { json, useLoaderData } from 'remix'
 
 import Arrow from '~/components/Arrow'
-import { Calendar } from '~/components/Calendar'
 import Circle from '~/components/Circle'
 import Contributions from '~/components/home/Contributions'
 import Deployments from '~/components/home/Deployments'
 import Languages from '~/components/home/Languages'
-import Stats from '~/components/home/Languages'
-import Tools from '~/components/home/Toolts'
+import Tools from '~/components/home/Tools'
 import Hero from '~/components/layout/Hero'
 import HomeSection from '~/components/layout/HomeSection'
 import Placeholder from '~/components/Placeholder'
-import { Radar } from '~/components/Radar'
 import Paragraph from '~/components/typography/Paragraph'
 
 type LanguageData = { percentage: number }

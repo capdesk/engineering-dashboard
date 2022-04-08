@@ -26,6 +26,10 @@ function Document({ children, title }: { children: React.ReactNode; title?: stri
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" /> {title ? <title>{title}</title> : null}
+        <meta
+          name="description"
+          content="Our live Engineering Dashboard offers a quick sneak peek into Capdesk's engineering world."
+        ></meta>
         <Meta />
         <Links />
       </head>
@@ -51,7 +55,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
 
 export default function App() {
   return (
-    <Document>
+    <Document title="Capdesk Engineering Dashboard">
       <Layout>
         <Outlet />
       </Layout>

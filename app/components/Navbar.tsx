@@ -7,7 +7,7 @@ const Navbar: React.FC = () => (
     <Link to="/">
       <img height="37" src={capdesk} />
     </Link>
-    <p className="font-mono text-2xl">Engineers Dashboard</p>
+    <p className="font-mono text-2xl">Engineering Dashboard</p>
     <div className="flex flex-row gap-4 w1/3">
       <Link to="/resources">
         <Button>RESOURCES</Button>
