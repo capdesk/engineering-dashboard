@@ -59,8 +59,8 @@ const Tools: React.FC = () => {
   return (
     <div className="flex flex-row justify-evenly items-center py-16 w-full">
       {Object.entries(tools).map(([key, value]) => (
-        <div>
-          <img key={key} src={value} />
+        <div key={key}>
+          <img src={value} />
         </div>
       ))}
     </div>
