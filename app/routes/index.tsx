@@ -1,14 +1,11 @@
 import { json, useLoaderData } from 'remix'
-
-import Arrow from '~/components/Arrow'
-import Circle from '~/components/Circle'
 import Contributions from '~/components/home/Contributions'
 import Deployments from '~/components/home/Deployments'
 import Languages from '~/components/home/Languages'
+import Team from '~/components/home/Team'
 import Tools from '~/components/home/Tools'
 import Hero from '~/components/layout/Hero'
 import HomeSection from '~/components/layout/HomeSection'
-import Placeholder from '~/components/Placeholder'
 import Paragraph from '~/components/typography/Paragraph'
 
 type LanguageData = { percentage: number }
@@ -57,12 +54,15 @@ export default function Index() {
           <span className="text-2xl text-light text-white font-mono pr-6 self-end lg:self-start">{date}</span>
         </div>
       </Hero>
+
       <HomeSection title="Language distribution">
         <Languages languages={languages} />
       </HomeSection>
+
       <HomeSection title="Deployments" light>
         <Deployments releases={releases} />
       </HomeSection>
+
       <HomeSection title="Contributions">
         <Contributions
           contributions={contributions}
@@ -72,29 +72,11 @@ export default function Index() {
           workflow_runs={workflow_runs}
         />
       </HomeSection>
+
       <HomeSection title="The Team" circleId="hiring-arrow" light>
-        <div className="flex flex-row justify-end">
-          <div className="w-1/2">
-            <Placeholder />
-            <Placeholder />
-            <Placeholder />
-          </div>
-        </div>
-        <Arrow start="hiring-arrow" end="hiring-circle" lineColor="#dddddd" showHead={false} endAnchor="left" />
-        <div className="flex flex-col gap-4 py-4 m-auto w-1/2">
-          <div className="flex flex-row items-center gap-4" style={{ marginLeft: '-56px' }}>
-            <Circle id="hiring-circle" className="ml-3" />
-            <h3 className="text-xl">Interested in joining the team?</h3>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam.
-          </p>
-          <a href="#" className="text-orangeish">
-            link here
-          </a>
-        </div>
+        <Team />
       </HomeSection>
+
       <HomeSection title="The tools we use" circleId="tools">
         <Tools />
       </HomeSection>
