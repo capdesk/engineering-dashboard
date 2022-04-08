@@ -14,10 +14,10 @@ const HomeSection: React.FC<{ light?: boolean; title: string; circleId?: string 
           <span className="border-2 h-full border-grey-300 bg-gre-300" />
         </div>
         <div className="w-full">
-          <div className="flex flex-row items-start gap-7 py-6" style={{ marginLeft: '-10px' }}>
+          <div className="flex flex-row items-start gap-7 py-16" style={{ marginLeft: '-10px' }}>
             <Circle id={circleId} className={bg} />
             <div className="w-full">
-              <h2 className="text-4xl font-mono text-highlight-on text-light">{title}</h2>
+              <h2 className="text-4xl font-mono text-light">{title}</h2>
               <div>{children}</div>
             </div>
           </div>

@@ -14,7 +14,7 @@ const ProgressCircle: React.FC<{ color: string; percentage: number }> = ({ color
         styles={buildStyles({
           strokeLinecap: 'butt',
           pathTransitionDuration: 0.5,
-          trailColor: 'transparent',
+          trailColor: '#C4C4C4',
           pathColor: color,
         })}
       >

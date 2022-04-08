@@ -17,7 +17,7 @@ const Hero: React.FC<{ title: string; hideLine?: boolean; extra?: React.ReactNod
         <div className="flex flex-col w-full">
           <h1 className="text-5xl font-mono text-highlight-on text-light">{title}</h1>
           <div className="flex flex-row items-center gap-2">
-            <span className="my-4 border-b-2 divide-gray-200 flex-1" />
+            <span className="my-5 border-b-2 divide-gray-200 flex-1" />
             <Circle />
           </div>
           <div className="flex flex-col gap-4">{children}</div>

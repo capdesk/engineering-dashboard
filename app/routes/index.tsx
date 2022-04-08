@@ -1,83 +1,64 @@
-import datadog from '~/assets/images/datadog.png'
-import github from '~/assets/images/github.png'
-import heroku from '~/assets/images/heroku.png'
-import launchdarkly from '~/assets/images/launchdarkly.png'
+import { json, useLoaderData } from 'remix'
+
 import Arrow from '~/components/Arrow'
 import { Calendar } from '~/components/Calendar'
 import Circle from '~/components/Circle'
+import Languages from '~/components/home/Languages'
+import Stats from '~/components/home/Languages'
+import Tools from '~/components/home/Toolts'
 import Hero from '~/components/layout/Hero'
 import HomeSection from '~/components/layout/HomeSection'
 import Placeholder from '~/components/Placeholder'
-import ProgressCircle from '~/components/ProgressCircle'
 import { Radar } from '~/components/Radar'
+import Paragraph from '~/components/typography/Paragraph'
 
-const RadarSection: React.FC = () => {
-  return (
-    <div className="flex flex-row justify-center items-center gap-8 bg-white py-16 px-28" style={{ height: '600px' }}>
-      <Radar />
-    </div>
-  )
+type LanguageData = { percentage: number }
+// 7-tuple
+type Week = [number, number, number, number, number, number, number]
+
+type Data = {
+  commits: number
+  contributions: Record<string, Week[]>
+  coverage: number
+  languages: Record<string, LanguageData>
+  pull_request: number
+  releases: string[]
+  workflow_runs: number
 }
 
-const CalendarSection: React.FC = () => {
-  return (
-    <div className="flex flex-row justify-center items-center gap-8 bg-white py-16 px-28" style={{ height: '600px' }}>
-      <Calendar />
-    </div>
-  )
-}
+const date = new Intl.DateTimeFormat('en-GB', {
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric',
+})
+  .formatToParts(new Date())
+  .filter((part) => part.type !== 'literal')
+  .map((part) => part.value)
+  .join('.')
 
-const Stats: React.FC = () => {
-  const stats = [
-    [75, '26.3.2022'],
-    [12, '25.3.2022'],
-    [6, '24.3.2022'],
-    [26, '23.3.2022'],
-  ].sort(([percentageA], [percentageB]) => Number(percentageB) - Number(percentageA))
-  const weights = ['bold', 'normal', 'normal', 'normal']
-  const colors = ['#1cffc0 ', '#fff', '#fff', '#fff']
-  return (
-    <div className="flex flex-row justify-evenly items-center py-16 w-full">
-      {stats.map(([percentage, date], index) => (
-        <ProgressCircle key={date} color={colors[index]} percentage={Number(percentage)}>
-          <p className={`text-5xl text-mono font-${weights[index]}`} style={{ color: colors[index] }}>
-            {percentage}%
-          </p>
-        </ProgressCircle>
-      ))}
-    </div>
+export async function loader() {
+  const data = await fetch('https://capdesk-eng-dashboard.s3.eu-west-1.amazonaws.com/data.json').then((res) =>
+    res.json()
   )
-}
-
-const Tools: React.FC = () => {
-  const tools = {
-    github,
-    heroku,
-    datadog,
-    launchdarkly,
-  }
-  return (
-    <div className="flex flex-row justify-evenly items-center py-16 w-full">
-      {Object.entries(tools).map(([key, value]) => (
-        <div key={key}>
-          <img src={value} />
-        </div>
-      ))}
-    </div>
-  )
+  return json(data)
 }
 
 export default function Index() {
+  const data = useLoaderData<Data>()
+
   return (
     <div>
-      <Hero title="Main title goes here" extra={<Stats />}>
-        <span className="text-mono text-xl">12.02.2022</span>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam.
+      <Hero title="Dashboard">
+        <div className="flex flex-col lg:flex-row gap-2 lg:gap-0 justify-between">
+          <Paragraph className="w-full lg:w-1/2">
+            Welcome to the home of all things Engineering at Capdesk. Get a real-time overview of key metrics in our
+            product environment, plus find out more about our top team, and dive deep into our latest Engineering
+            resources.
+          </Paragraph>
+          <span className="text-2xl text-light text-white font-mono pr-6 self-end lg:self-start">{date}</span>
+        </div>
       </Hero>
-      <HomeSection title="first section">
-        <Placeholder />
-      </HomeSection>
+      <HomeSection title="Language distribution">{<Languages languages={data.languages} />}</HomeSection>
       <HomeSection title="second section" light>
         <Placeholder />
       </HomeSection>
@@ -85,7 +66,7 @@ export default function Index() {
         <Placeholder />
       </HomeSection>
       <HomeSection title="Contribution" light>
-        <RadarSection />
+        Hello
       </HomeSection>
       <HomeSection title="The Team" circleId="hiring-arrow">
         <div className="flex flex-row justify-end">
@@ -116,3 +97,5 @@ export default function Index() {
     </div>
   )
 }
+
+export type { Data }
