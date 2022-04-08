@@ -5,7 +5,7 @@ import Languages from '~/components/home/Languages'
 import Team from '~/components/home/Team'
 import Tools from '~/components/home/Tools'
 import Hero from '~/components/layout/Hero'
-import HomeSection from '~/components/layout/HomeSection'
+import HomeSection, { SectionColor } from '~/components/layout/HomeSection'
 import Paragraph from '~/components/typography/Paragraph'
 
 type LanguageData = { percentage: number }
@@ -59,7 +59,7 @@ export default function Index() {
         <Languages languages={languages} />
       </HomeSection>
 
-      <HomeSection title="Deployments" light>
+      <HomeSection title="Deployments" color={SectionColor.LIGHT}>
         <Deployments releases={releases} />
       </HomeSection>
 
@@ -73,11 +73,11 @@ export default function Index() {
         />
       </HomeSection>
 
-      <HomeSection title="The Team" circleId="hiring-arrow" light>
+      <HomeSection title="The Team" circleId="hiring-arrow" color={SectionColor.LIGHT}>
         <Team />
       </HomeSection>
 
-      <HomeSection title="The tools we use" circleId="tools">
+      <HomeSection title="The tools we use" circleId="tools" color={SectionColor.TOOLS}>
         <Tools />
       </HomeSection>
     </div>
