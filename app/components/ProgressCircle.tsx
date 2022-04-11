@@ -7,7 +7,7 @@ export function links() {
 
 const ProgressCircle: React.FC<{ color: string; percentage: number }> = ({ color, percentage, children }) => {
   return (
-    <div style={{ width: '150px', height: '150px' }}>
+    <div className="w-[150px] h-[150px]">
       <CircularProgressbarWithChildren
         value={percentage}
         strokeWidth={4}

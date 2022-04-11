@@ -16,8 +16,8 @@ const Block: React.FC<{ title: string }> = ({ title, children }) => {
 
 const Member: React.FC<Member> = ({ image, name, location, fun_facts: { work, other } }) => {
   return (
-    <div style={{ maxWidth: '390px' }}>
-      <img className="m-auto md:m-0" width="390" src={`/img/${image}`} />
+    <div className="max-w-[390px] mx-auto">
+      <img className="m-auto md:m-0" width="390" src={`/img/team/${image}`} />
       <div className="flex flex-col gap-2 pt-6 text-xl leading-7 font-light">
         <p className="text-2xl font-mono">{name}</p>
 
@@ -103,7 +103,7 @@ export default function Team() {
           <TodayDate />
         </div>
       </Hero>
-      <Section title="Head Of">
+      <Section title="Heads">
         <Squad members={squads.head_of} />
       </Section>
       <Section title="Hardcore" light>
@@ -112,7 +112,7 @@ export default function Team() {
       <Section title="Los Correros">
         <Squad members={squads.coreros} />
       </Section>
-      <Section title="Transaction" light>
+      <Section title="Secondaries" light>
         <Squad members={squads.tx} />
       </Section>
     </div>

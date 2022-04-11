@@ -20,10 +20,13 @@ const Hero: React.FC<{ title: string; hideLine?: boolean; extra?: React.ReactNod
       </div>
       <div className="flex flex-row justify-between">
         <div
-          className={`flex justify-end ${isHome ? 'pt-6 h-12' : ''}`}
+          className={`flex justify-end ${isHome ? 'pt-6 h-12' : 'h-12 opacity-0'}`}
           style={{ width: '125px', paddingLeft: '125px' }}
         >
-          <span style={{ minWidth: '3px' }} className={`bg-grey-200 h-full ${!isHome && 'border-transparent h-12'}`} />
+          <span
+            style={{ minWidth: '3px' }}
+            className={`h-full ${!isHome ? 'bg-grey-200 border-transparent h-12' : ''}`}
+          />
         </div>
         {extra}
       </div>
