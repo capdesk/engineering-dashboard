@@ -25,7 +25,7 @@ const Footer: React.FC<{}> = () => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col justify-between text-right mr-32">
+        <div className="flex flex-col justify-between text-right mr-32 font-inter">
           <Link className="hover:underline" to="/">
             Home
           </Link>
@@ -38,10 +38,10 @@ const Footer: React.FC<{}> = () => {
         </div>
       </div>
 
-      <div className="flex flex-row justify-between ml-20 mr-32 text-sm">
+      <div className="flex flex-row justify-between ml-20 mr-32 text-sm font-inter">
         <p>{copyright}</p>
         <a
-          className="flex flex-row items-center gap-2 hover:underline"
+          className="flex flex-row items-center gap-2 underline"
           href="https://github.com/capdesk/engineering-dashboard"
         >
           <img src={github} /> View dashboard code

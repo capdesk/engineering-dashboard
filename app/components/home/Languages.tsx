@@ -33,7 +33,7 @@ const Languages = ({ languages }: Pick<Data, 'languages'>) => {
 
       <div className="flex flex-col gap-8">
         <H3>How do we distribute code across languages?</H3>
-        <Paragraph className="w-full lg:w-2/3 xl:w-1/2">
+        <Paragraph className="w-full lg:w-2/3 xl:w-1/2 font-inter">
           We use quite a large variety of frameworks and languages at Capdesk. You can see our favourite ones here.
           These allow us to iterate fast, whilst maintaining a high level of code quality.
         </Paragraph>

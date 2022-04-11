@@ -70,7 +70,7 @@ const Deployments = ({ releases }: Pick<Data, 'releases'>) => {
 
       <div className="flex flex-col gap-8">
         <H3>An overview of our monthly deployments</H3>
-        <Paragraph className="w-full lg:w-2/3 xl:w-1/2">
+        <Paragraph className="w-full lg:w-2/3 xl:w-1/2 font-inter">
           At Capdesk, we practice Continuous Integration and Continuous Deployments, which allows our engineers to
           continuously bring value to production. You can see here that we often deploy features or bug fixes multiple
           times a day!
