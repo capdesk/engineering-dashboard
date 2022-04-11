@@ -26,7 +26,7 @@ const Contributions = ({ contributions, coverage, commits, workflow_runs, pull_r
               style={{ maxWidth: '250px' }}
             >
               <span className="text-mono text-highlight-on text-5xl">{value}</span>
-              <span className="text-xl text-light whitespace-nowrap">{names[key]}</span>
+              <span className="text-xl font-light whitespace-nowrap">{names[key]}</span>
             </div>
           ))}
         </div>

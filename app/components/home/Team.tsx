@@ -10,9 +10,9 @@ const Team = () => {
         <div>
           <Circle id="hiring-circle" className="ml-3" />
         </div>
-        <div className="flex flex-col gap-8 text-light">
+        <div className="flex flex-col gap-8 font-light">
           <H3>Interested in joining the team?</H3>
-          <Paragraph>
+          <Paragraph className="font-inter">
             Interested in joining the team? Do you like what you see at Capdesk? Are you looking to join a product team
             with solid processes and room for growth? Check out our latest positions or drop us an email at
             careers@capdesk.com find out more

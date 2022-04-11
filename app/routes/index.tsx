@@ -1,4 +1,5 @@
 import { json, useLoaderData } from 'remix'
+import TodayDate from '~/components/TodayDate'
 import Contributions from '~/components/home/Contributions'
 import Deployments from '~/components/home/Deployments'
 import Languages from '~/components/home/Languages'
@@ -22,16 +23,6 @@ type Data = {
   workflow_runs: number
 }
 
-const date = new Intl.DateTimeFormat('en-GB', {
-  day: '2-digit',
-  month: '2-digit',
-  year: 'numeric',
-})
-  .formatToParts(new Date())
-  .filter((part) => part.type !== 'literal')
-  .map((part) => part.value)
-  .join('.')
-
 export async function loader() {
   const data = await fetch('https://capdesk-eng-dashboard.s3.eu-west-1.amazonaws.com/data.json').then((res) =>
     res.json()
@@ -51,7 +42,7 @@ export default function Index() {
             product environment, plus find out more about our top team, and dive deep into our latest Engineering
             resources.
           </Paragraph>
-          <span className="text-2xl text-light text-white font-mono pr-6 self-end lg:self-start">{date}</span>
+          <TodayDate />
         </div>
       </Hero>
 

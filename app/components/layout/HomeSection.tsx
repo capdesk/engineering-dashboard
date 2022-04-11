@@ -22,7 +22,7 @@ const HomeSection: React.FC<{ color?: SectionColor; title: string; circleId?: st
           <div className="flex flex-row items-start gap-7 py-16" style={{ marginLeft: '-10px' }}>
             <Circle id={circleId} className={color} />
             <div className="w-full">
-              <h2 className="text-4xl font-mono text-light">{title}</h2>
+              <h2 className="text-4xl font-mono font-light">{title}</h2>
               <div>{children}</div>
             </div>
           </div>

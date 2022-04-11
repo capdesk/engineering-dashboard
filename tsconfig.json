@@ -8,6 +8,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "target": "ES2019",
+    "module": "esnext",
 
     /* Strict Type-Checking Options */
     "strict": true /* Enable all strict type-checking options. */,

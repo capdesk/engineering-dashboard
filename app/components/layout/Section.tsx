@@ -3,7 +3,7 @@ const Section: React.FC<{ light?: boolean; title: string; circleId?: string }> =
   return (
     <div className={`py-12 px-14 ${bg}`}>
       <div className="flex flex-col gap-16">
-        <h2 className="text-4xl font-mono text-gradient text-light">{title}</h2>
+        <h2 className="text-4xl font-mono text-gradient font-light">{title}</h2>
         <div>{children}</div>
       </div>
     </div>

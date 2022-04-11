@@ -8,13 +8,14 @@ module.exports = {
       pattern: /(divide|text|stroke)-(white|highlight-on)/,
     },
     {
-      pattern: /(bg)-(grey|dark)-(100|200|300)/,
+      pattern: /(bg)-(grey|dark)-(100|200|300|400)/,
     },
   ],
   theme: {
     fontFamily: {
       sans: ['Trim'],
       mono: ['Trim Mono'],
+      inter: ['Inter'],
     },
     extend: {
       colors: {
@@ -22,6 +23,7 @@ module.exports = {
           100: '#292929',
           200: '#2e2e2e',
           300: '#121212',
+          400: '#292929',
         },
         grey: {
           100: '#dddddd',
