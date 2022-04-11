@@ -106,10 +106,10 @@ export default function Team() {
       <Section title="Head Of">
         <Squad members={squads.head_of} />
       </Section>
-      <Section title="Hardcore" light>
+      <Section title="HardCore" light>
         <Squad members={squads.hardcore} />
       </Section>
-      <Section title="Los Correros">
+      <Section title="Los Coreros">
         <Squad members={squads.coreros} />
       </Section>
       <Section title="Transaction" light>
