@@ -15,8 +15,8 @@ const HomeSection: React.FC<{ color?: SectionColor; title: string; circleId?: st
   return (
     <div className={`px-14 ${color}`}>
       <div className="flex flex-row">
-        <div className="flex justify-end" style={{ width: '125px', paddingLeft: '125px' }}>
-          <span className="border-2 h-full border-grey-300 bg-gre-300" />
+        <div className="flex justify-end" style={{ width: '125px', paddingLeft: '124px' }}>
+          <span style={{ minWidth: '3px' }} className="h-full bg-grey-200 border-grey-200" />
         </div>
         <div className="w-full">
           <div className="flex flex-row items-start gap-7 py-16" style={{ marginLeft: '-10px' }}>
