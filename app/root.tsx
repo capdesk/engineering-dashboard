@@ -19,7 +19,7 @@ export function links() {
 
 export const meta: MetaFunction = () => {
   return {
-    title: 'Capdesk Engineering',
+    title: 'Capdesk Engineering Dashboard',
     description: "Our live Engineering Dashboard offers a quick sneak peek into Capdesk's engineering world.",
   }
 }
@@ -55,7 +55,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
 
 export default function App() {
   return (
-    <Document title="Capdesk Engineering Dashboard">
+    <Document>
       <Layout>
         <Outlet />
       </Layout>
