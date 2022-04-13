@@ -18,7 +18,10 @@ export function links() {
 }
 
 export const meta: MetaFunction = () => {
-  return { title: 'Capdesk Engineering' }
+  return {
+    title: 'Capdesk Engineering',
+    description: "Our live Engineering Dashboard offers a quick sneak peek into Capdesk's engineering world.",
+  }
 }
 
 function Document({ children, title }: { children: React.ReactNode; title?: string }) {
@@ -27,10 +30,6 @@ function Document({ children, title }: { children: React.ReactNode; title?: stri
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" /> {title ? <title>{title}</title> : null}
-        <meta
-          name="description"
-          content="Our live Engineering Dashboard offers a quick sneak peek into Capdesk's engineering world."
-        ></meta>
         <Meta />
         <Links />
       </head>
