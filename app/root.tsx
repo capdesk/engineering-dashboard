@@ -13,6 +13,7 @@ export function links() {
     { rel: 'stylesheet', href: tailwind },
     { rel: 'stylesheet', href: fonts },
     { rel: 'stylesheet', href: progress },
+    { rel: 'icon', type: 'image/png', href: '/favicon.png' },
   ]
 }
 
