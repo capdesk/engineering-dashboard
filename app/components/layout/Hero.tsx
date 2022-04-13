@@ -1,5 +1,6 @@
+import Lottie from 'lottie-react'
 import { useLocation } from 'remix'
-import engineering from '~/assets/images/engineering_lg.gif'
+import engineering from '~/assets/animations/engineering.json'
 import Circle from '~/components/Circle'
 
 const Hero: React.FC<{ title: string; hideLine?: boolean; extra?: React.ReactNode }> = ({ children, title, extra }) => {
@@ -8,7 +9,9 @@ const Hero: React.FC<{ title: string; hideLine?: boolean; extra?: React.ReactNod
   return (
     <div className="px-14 pt-8">
       <div className="flex flex-row items-center gap-5 pb-2">
-        <img src={engineering} width="250" />
+        <div className="max-w-[250px]">
+          <Lottie animationData={engineering} loop autoplay />
+        </div>
         <div className="flex flex-col w-full pt-8">
           <h1 className="text-5xl font-mono text-highlight-on font-light">{title}</h1>
           <div className="flex flex-row items-center gap-2">

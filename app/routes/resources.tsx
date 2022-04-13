@@ -1,9 +1,5 @@
 import Hero from '~/components/layout/Hero'
 import Section from '~/components/layout/Section'
-import Placeholder from '~/components/Placeholder'
-import image1 from '~/assets/images/image1.png'
-import image2 from '~/assets/images/image2.png'
-import image3 from '~/assets/images/image3.png'
 import TodayDate from '~/components/TodayDate'
 import Paragraph from '~/components/typography/Paragraph'
 
@@ -41,7 +37,7 @@ const articles = [
     description:
       'Check out our comprehensive design system for the Capdesk product. A single source of truth that groups all the design elements together in one place.',
     label: 'view',
-    image: 'design_system.png',
+    image: 'design_system.jpeg',
     url: 'https://camo.capdesk.com',
   },
   {
@@ -53,7 +49,7 @@ const articles = [
       </div>
     ),
     label: 'read',
-    image: 'capdesk_spaceship.png',
+    image: 'capdesk_spaceship.jpeg',
     url: 'https://blog.capdesk.com/life-as-a-student-developer',
   },
   {
@@ -65,7 +61,7 @@ const articles = [
       </div>
     ),
     label: 'read',
-    image: 'eat_sleep_code.png',
+    image: 'capdesk_remote.jpeg',
     url: 'https://blog.capdesk.com/five-years-five-learnings',
   },
 ]
