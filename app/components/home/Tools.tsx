@@ -11,10 +11,10 @@ const Tools: React.FC = () => {
     launchdarkly,
   }
   return (
-    <div className="flex flex-row justify-evenly items-center py-16 w-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
       {Object.entries(tools).map(([key, value]) => (
-        <div key={key}>
-          <img alt={value} src={value} />
+        <div key={key} className="w-full">
+          <img className="m-auto" alt={value} src={value} />
         </div>
       ))}
     </div>

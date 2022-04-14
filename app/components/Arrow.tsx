@@ -14,7 +14,11 @@ const Arrow: React.FC<xarrowPropsType> = (props) => {
     return null
   }
 
-  return <Xarrow {...props} lineColor="#a29bb6" showHead={false} showXarrow={showChild} />
+  return (
+    <span className="hidden md:inline">
+      <Xarrow {...props} lineColor="#a29bb6" showHead={false} showXarrow={showChild} />
+    </span>
+  )
 }
 
 export default Arrow

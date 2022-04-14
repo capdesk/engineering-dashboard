@@ -36,7 +36,7 @@ export default function Index() {
   return (
     <div>
       <Hero title="Dashboard">
-        <div className="flex flex-col lg:flex-row gap-2 lg:gap-0 justify-between">
+        <div className="flex flex-col lg:flex-row gap-4 sm:gap-2 lg:gap-0 justify-between">
           <Paragraph className="w-full lg:w-1/2">
             Welcome to the home of all things Engineering at Capdesk. Get a real-time overview of key metrics in our
             product environment, plus find out more about our top team, and dive deep into our latest Engineering

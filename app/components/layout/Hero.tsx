@@ -7,9 +7,9 @@ const Hero: React.FC<{ title: string; hideLine?: boolean; extra?: React.ReactNod
   const location = useLocation()
   const isHome = location.pathname === '/'
   return (
-    <div className="px-14 pt-8">
+    <div className="px-7 lg:px-14 pt-8 pb-8 md:pb-0">
       <div className="flex flex-row items-center gap-5 pb-2">
-        <div className="max-w-[250px]">
+        <div className="hidden md:block max-w-[200px] lg:max-w-[250px]">
           <Lottie animationData={engineering} loop autoplay />
         </div>
         <div className="flex flex-col w-full pt-8">
@@ -21,11 +21,8 @@ const Hero: React.FC<{ title: string; hideLine?: boolean; extra?: React.ReactNod
           <div className="flex flex-col gap-4 font-inter">{children}</div>
         </div>
       </div>
-      <div className="flex flex-row justify-between">
-        <div
-          className={`flex justify-end ${isHome ? 'pt-6 h-12' : 'h-12 opacity-0'}`}
-          style={{ width: '125px', paddingLeft: '125px' }}
-        >
+      <div className="hidden md:flex flex-row justify-between">
+        <div className={`flex justify-end pl-[95px] lg:pl-[124px] ${isHome ? 'pt-6 h-12' : 'h-12 opacity-0'}`}>
           <span style={{ minWidth: '3px' }} className={`h-full ${isHome ? 'bg-grey-200 h-12' : ''}`} />
         </div>
         {extra}
