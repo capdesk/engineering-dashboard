@@ -11,7 +11,7 @@ const Navbar: React.FC = () => (
       <p className="lg:hidden font-mono text-2xl">Engineering Dashboard</p>
     </div>
     <p className="hidden lg:inline font-mono text-2xl text-left md:text-center">Engineering Dashboard</p>
-    <div className="flex flex-col md:flex-row gap-4 justify-end">
+    <div className="flex flex-col md:flex-row gap-4 justify-end items-end">
       <Link to="/resources">
         <Button>RESOURCES</Button>
       </Link>
