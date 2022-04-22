@@ -1,3 +1,4 @@
+import { Calendar } from '~/components/Calendar'
 import H3 from '~/components/typography/H3'
 import { Data } from '~/routes'
 
@@ -14,9 +15,14 @@ const names: Record<string, string> = {
 
 const Contributions = ({ contributions, coverage, commits, workflow_runs, pull_requests }: Pick<Data, PickedProps>) => {
   const values = { coverage: `${toFixed(coverage * 100)}%`, commits, workflow_runs, pull_requests }
+
   return (
     <div className="flex flex-col xl:p-16 xl:pb-8 pb-0 gap-16 xl:gap-32 pt-16 xl:pt-32">
       <div className="flex flex-col gap-8">
+        <H3>{commits} contributions in the last year</H3>
+        <div>
+          <Calendar contributions={contributions} />
+        </div>
         <H3>Key metrics in the last year</H3>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {Object.entries(values).map(([key, value]) => (
@@ -35,4 +41,4 @@ const Contributions = ({ contributions, coverage, commits, workflow_runs, pull_r
   )
 }
 
-export default Contributions
+export { Contributions }
