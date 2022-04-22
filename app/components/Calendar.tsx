@@ -21,24 +21,33 @@ const Day: React.FC<{ value: number }> = ({ value }) => {
 }
 
 // TODO tooltip on hover
-// TODO legend
 
 const Calendar: React.FC<{ contributions: ParsedContributions }> = ({ contributions }) => (
-  <div className="flex flex-row flex-wrap justify-center">
-    {contributions.map((parsedContribution) => (
-      <div className="flex flex-col">
-        <div className="mt-4">{parsedContribution.month}</div>
-        <div className="flex flex-row">
-          {parsedContribution.weeks.map((week) => (
-            <div className="flex flex-col">
-              {week.week.map((day) => (
-                <Day value={day} />
-              ))}
-            </div>
-          ))}
+  <div className="flex flex-col justify-center w-fit">
+    <div className="flex flex-row flex-wrap">
+      {contributions.map((parsedContribution) => (
+        <div className="flex flex-col">
+          <div className="mt-4">{parsedContribution.month}</div>
+          <div className="flex flex-row">
+            {parsedContribution.weeks.map((week) => (
+              <div className="flex flex-col">
+                {week.week.map((day) => (
+                  <Day value={day} />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
+      ))}
+    </div>
+    <div className="mt-4 flex flex-row md:justify-end">
+      <div>Less</div>
+      <Day value={8} />
+      <Day value={16} />
+      <Day value={0} />
+      <Day value={24} />
+      <div>More</div>
+    </div>
   </div>
 )
 
