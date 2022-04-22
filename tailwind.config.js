@@ -10,6 +10,9 @@ module.exports = {
     {
       pattern: /(bg)-(grey|dark)-(100|200|300|400)/,
     },
+    {
+      pattern: /w-(1|2|3|4|5|6|7|8|9)/,
+    },
   ],
   theme: {
     fontFamily: {
