@@ -3,6 +3,7 @@ import { ParsedContributions } from '~/routes/index'
 import { Tooltip } from '~/components/Tooltip'
 
 enum DayColor {
+  EMPTY = 'bg-cal-empty',
   SMALL = 'bg-cal-s',
   MEDIUM = 'bg-cal-m',
   LARGE = 'bg-cal-l',
@@ -10,10 +11,10 @@ enum DayColor {
 }
 
 enum DayThreshold {
-  SMALL = 0,
-  MEDIUM = 8,
-  LARGE = 16,
-  XLARGE = 24,
+  SMALL = 1,
+  MEDIUM = 12,
+  LARGE = 24,
+  XLARGE = 40,
 }
 
 const Day: React.FC<{ value: number; date?: string; enableTooltip?: boolean }> = ({
@@ -23,13 +24,15 @@ const Day: React.FC<{ value: number; date?: string; enableTooltip?: boolean }> =
 }) => {
   const [isHovered, setIsHovered] = useState(false)
   // TODO these thresholds are arbitrary. Could calculate them dynamically somehow
-  let color = DayColor.SMALL
+  let color = DayColor.EMPTY
   if (value >= DayThreshold.XLARGE) {
     color = DayColor.XLARGE
   } else if (value >= DayThreshold.LARGE) {
     color = DayColor.LARGE
   } else if (value >= DayThreshold.MEDIUM) {
     color = DayColor.MEDIUM
+  } else if (value >= DayThreshold.SMALL) {
+    color = DayColor.SMALL
   }
 
   return (
