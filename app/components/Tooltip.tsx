@@ -5,9 +5,9 @@ const Tooltip: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   const [style, setStyle] = useState<{ left?: string }>({})
 
   useEffect(() => {
-    const { innerWidth: width, innerHeight: height } = window
-    const { right } = ref?.current?.getBoundingClientRect() ?? {}
-    const rightDiff = (right ?? 0) - width
+    const { innerWidth: width } = window
+    const { right = 0 } = ref?.current?.getBoundingClientRect() ?? {}
+    const rightDiff = right - width
     const newStyle = { ...style }
     if (rightDiff > 0) {
       // prevent the tooltip from going off the screen to the right
@@ -15,6 +15,7 @@ const Tooltip: React.FC<PropsWithChildren<{}>> = ({ children }) => {
     }
     setStyle(newStyle)
   }, [])
+
   return (
     <div
       ref={ref}
