@@ -1,6 +1,6 @@
 import { json, useLoaderData } from 'remix'
 import TodayDate from '~/components/TodayDate'
-import Contributions from '~/components/home/Contributions'
+import { Contributions } from '~/components/home/Contributions'
 import Deployments from '~/components/home/Deployments'
 import Languages from '~/components/home/Languages'
 import Team from '~/components/home/Team'
@@ -8,14 +8,15 @@ import Tools from '~/components/home/Tools'
 import Hero from '~/components/layout/Hero'
 import HomeSection, { SectionColor } from '~/components/layout/HomeSection'
 import Paragraph from '~/components/typography/Paragraph'
+import { Calendar } from '~/components/Calendar'
 
 type LanguageData = { percentage: number }
 // 7-tuple
 type Week = [number, number, number, number, number, number, number]
 
-type Data = {
+type ApiData = {
   commits: number
-  contributions: Record<string, Week[]>
+  contributions: Record<string, Week>
   coverage: number
   languages: Record<string, LanguageData>
   pull_requests: number
@@ -23,15 +24,56 @@ type Data = {
   workflow_runs: number
 }
 
+type ParsedWeek = {
+  date: Date
+  month: string
+  week: Week
+}
+
+type ParsedContributions = Array<{
+  month: string
+  weeks: Array<ParsedWeek>
+}>
+
+type Data = Omit<ApiData, 'contributions'> & { contributions: ParsedContributions }
+
 export async function loader() {
   const data = await fetch('https://capdesk-eng-dashboard.s3.eu-west-1.amazonaws.com/data.json').then((res) =>
     res.json()
   )
-  return json(data)
+  const { contributions, ...rest } = data as unknown as ApiData
+
+  const formatMonth = new Intl.DateTimeFormat('en-GB', { month: 'short' }).format
+
+  const parseWeek = (dateInSeconds: string, week: Week) => {
+    const date = new Date(Number(dateInSeconds) * 1000)
+    // TODO parse the days here to add the date of each contribution { date, value } for the tooltip
+    return {
+      date,
+      month: formatMonth(date),
+      week,
+    }
+  }
+
+  const weeks = Object.entries(contributions).map(([dateInSeconds, week]) => parseWeek(dateInSeconds, week))
+
+  const weeksByMonth = weeks.reduce<Record<string, Array<ParsedWeek>>>((acc, curr) => {
+    acc[curr.month] = acc[curr.month] || []
+    acc[curr.month].push(curr)
+    return acc
+  }, {})
+
+  const parsedContributions: ParsedContributions = Object.entries(weeksByMonth).map(([month, weeks]) => ({
+    month,
+    weeks,
+  }))
+
+  return json({ ...rest, contributions: parsedContributions })
 }
 
 export default function Index() {
-  const { languages, releases, coverage, contributions, pull_requests, commits, workflow_runs } = useLoaderData<Data>()
+  const { languages, releases, coverage, contributions, pull_requests, commits, workflow_runs } =
+    useLoaderData<ApiData>()
 
   return (
     <div>
@@ -75,4 +117,4 @@ export default function Index() {
   )
 }
 
-export type { Data }
+export type { Data, ParsedContributions }
