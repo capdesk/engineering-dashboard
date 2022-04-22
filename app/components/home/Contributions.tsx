@@ -47,8 +47,6 @@ const Contributions = ({
 
   const weeks = Object.entries(contributions).map(([dateInSeconds, week]) => parseWeek(dateInSeconds, week))
 
-  const totalContributions = weeks.reduce((acc, curr) => (acc += curr.week.reduce((acc, curr) => (acc += curr))), 0)
-
   const weeksByMonth = weeks.reduce<Record<string, Array<ParsedWeek>>>((acc, curr) => {
     acc[curr.month] = acc[curr.month] || []
     acc[curr.month].push(curr)
@@ -63,7 +61,7 @@ const Contributions = ({
   return (
     <div className="flex flex-col xl:p-16 xl:pb-8 pb-0 gap-16 xl:gap-32 pt-16 xl:pt-32">
       <div className="flex flex-col gap-8">
-        <H3>{totalContributions} contributions in the last year</H3>
+        <H3>{commits} contributions in the last year</H3>
         <div>
           <Calendar contributions={parsedContributions} />
         </div>
