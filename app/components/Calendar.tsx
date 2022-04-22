@@ -40,11 +40,11 @@ const Calendar: React.FC<{ contributions: ParsedContributions }> = ({ contributi
         </div>
       ))}
     </div>
-    <div className="mt-4 flex flex-row md:justify-end">
+    <div className="mt-4 flex flex-row items-center md:justify-end">
       <div>Less</div>
+      <Day value={0} />
       <Day value={8} />
       <Day value={16} />
-      <Day value={0} />
       <Day value={24} />
       <div>More</div>
     </div>
