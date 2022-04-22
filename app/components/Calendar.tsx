@@ -3,10 +3,10 @@ import { ParsedContributions } from '~/routes/index'
 import { Tooltip } from '~/components/Tooltip'
 
 enum DayColor {
-  SMALL = 'bg-tealish-400',
-  MEDIUM = 'bg-tealish-300',
-  LARGE = 'bg-tealish-200',
-  XLARGE = 'bg-tealish-100',
+  SMALL = 'bg-cal-s',
+  MEDIUM = 'bg-cal-m',
+  LARGE = 'bg-cal-l',
+  XLARGE = 'bg-cal-xl',
 }
 
 enum DayThreshold {
