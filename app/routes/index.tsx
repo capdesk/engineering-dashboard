@@ -8,7 +8,6 @@ import Tools from '~/components/home/Tools'
 import Hero from '~/components/layout/Hero'
 import HomeSection, { SectionColor } from '~/components/layout/HomeSection'
 import Paragraph from '~/components/typography/Paragraph'
-import { Calendar } from '~/components/Calendar'
 
 type LanguageData = { percentage: number }
 // 7-tuple
@@ -23,11 +22,14 @@ type ApiData = {
   releases: string[]
   workflow_runs: number
 }
-
+type ParsedDay = {
+  date: string
+  value: number
+}
 type ParsedWeek = {
-  date: Date
+  date: string
   month: string
-  week: Week
+  week: ParsedDay[]
 }
 
 type ParsedContributions = Array<{
@@ -44,14 +46,24 @@ export async function loader() {
   const { contributions, ...rest } = data as unknown as ApiData
 
   const formatMonth = new Intl.DateTimeFormat('en-GB', { month: 'short' }).format
+  const formatDate = new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  }).format
 
-  const parseWeek = (dateInSeconds: string, week: Week) => {
-    const date = new Date(Number(dateInSeconds) * 1000)
-    // TODO parse the days here to add the date of each contribution { date, value } for the tooltip
+  const MILLIS_IN_DAY = 86400000
+
+  const parseWeek = (dateInSeconds: string, week: Week): ParsedWeek => {
+    const dateInMillis = Number(dateInSeconds) * 1000
+    const date = new Date(dateInMillis)
     return {
-      date,
+      date: date.toISOString(),
       month: formatMonth(date),
-      week,
+      week: week.map((day, index) => ({
+        date: formatDate(new Date(dateInMillis + MILLIS_IN_DAY * index)),
+        value: day,
+      })),
     }
   }
 

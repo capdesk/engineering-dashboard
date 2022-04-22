@@ -34,11 +34,11 @@ module.exports = {
           300: '#f4f6ff',
           400: '#414853',
         },
-        tealish: {
-          100: '#1CFFC0',
-          200: '#0FB7C9',
-          300: '#0C98A7',
-          400: '#002545',
+        cal: {
+          s: '#414853',
+          m: '#1CFFC0',
+          l: '#0C98A7',
+          xl: '#002545',
         },
         orangeish: '#ff645f',
         'highlight-on': '#1cffc0',
