@@ -1,24 +1,21 @@
 import { ParsedContributions } from '~/components/home/Contributions'
 
 enum DayColor {
-  ZERO = 'bg-dark-200',
-  SMALL = 'bg-teal-900',
-  MEDIUM = 'bg-teal-700',
-  LARGE = 'bg-teal-500',
-  XLARGE = 'bg-teal-300',
+  SMALL = 'bg-tealish-400',
+  MEDIUM = 'bg-tealish-300',
+  LARGE = 'bg-tealish-200',
+  XLARGE = 'bg-tealish-100',
 }
 
 const Day: React.FC<{ value: number }> = ({ value }) => {
   // TODO these thresholds are arbitrary. Could calculate them dynamically somehow
-  let color = DayColor.ZERO
-  if (value >= 30) {
+  let color = DayColor.SMALL
+  if (value >= 24) {
     color = DayColor.XLARGE
-  } else if (value >= 20) {
+  } else if (value >= 16) {
     color = DayColor.LARGE
-  } else if (value >= 10) {
+  } else if (value >= 8) {
     color = DayColor.MEDIUM
-  } else if (value >= 1) {
-    color = DayColor.SMALL
   }
   return <div className={`${color} w-5 h-5 m-1`} />
 }
