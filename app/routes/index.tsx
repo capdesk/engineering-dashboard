@@ -1,6 +1,6 @@
 import { json, useLoaderData } from 'remix'
 import TodayDate from '~/components/TodayDate'
-import Contributions from '~/components/home/Contributions'
+import { Contributions } from '~/components/home/Contributions'
 import Deployments from '~/components/home/Deployments'
 import Languages from '~/components/home/Languages'
 import Team from '~/components/home/Team'
@@ -8,14 +8,15 @@ import Tools from '~/components/home/Tools'
 import Hero from '~/components/layout/Hero'
 import HomeSection, { SectionColor } from '~/components/layout/HomeSection'
 import Paragraph from '~/components/typography/Paragraph'
+import { Calendar } from '~/components/Calendar'
 
 type LanguageData = { percentage: number }
 // 7-tuple
 type Week = [number, number, number, number, number, number, number]
 
-type Data = {
+type ApiData = {
   commits: number
-  contributions: Record<string, Week[]>
+  contributions: Record<string, Week>
   coverage: number
   languages: Record<string, LanguageData>
   pull_requests: number
@@ -31,7 +32,8 @@ export async function loader() {
 }
 
 export default function Index() {
-  const { languages, releases, coverage, contributions, pull_requests, commits, workflow_runs } = useLoaderData<Data>()
+  const { languages, releases, coverage, contributions, pull_requests, commits, workflow_runs } =
+    useLoaderData<ApiData>()
 
   return (
     <div>
@@ -75,4 +77,4 @@ export default function Index() {
   )
 }
 
-export type { Data }
+export type { ApiData, Week }
