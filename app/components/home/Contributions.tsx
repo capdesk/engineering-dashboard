@@ -27,7 +27,7 @@ const Contributions = ({ contributions, coverage, commits, workflow_runs, pull_r
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {Object.entries(values).map(([key, value]) => (
             <div
-              key="key"
+              key={key}
               className="bg-dark-200 rounded-sm flex flex-col px-16 py-10 gap-8 items-center w-full m-auto"
               style={{ maxWidth: '250px' }}
             >
