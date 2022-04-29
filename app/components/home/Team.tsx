@@ -32,8 +32,8 @@ const Team = () => {
         <Metric title="Squads" value={3} />
       </div>
 
-      <div className="flex flex-row gap-8 w-2/3 m-auto">
-        <div>
+      <div className="flex flex-row gap-8 w-full md:w-2/3 m-auto">
+        <div className="hidden md:block">
           <Circle id="hiring-circle" className="ml-3" />
         </div>
 
