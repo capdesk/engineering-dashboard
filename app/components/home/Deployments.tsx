@@ -1,4 +1,6 @@
+import React, { useEffect } from 'react'
 import { PureComponent } from 'react'
+import { useIntersection } from 'react-use'
 import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import H3 from '~/components/typography/H3'
 import Paragraph from '~/components/typography/Paragraph'
@@ -10,7 +12,29 @@ const formatMonth = new Intl.DateTimeFormat('en-GB', { month: 'short' }).format
 
 type MonthlyRelease = { name: string; month: number; releases: number }
 
+const useVisible = (ref: React.RefObject<HTMLElement>) => {
+  const [visible, setVisible] = React.useState<boolean>(false)
+  const intersection = useIntersection(ref, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1,
+  })
+
+  useEffect(() => {
+    if (visible) {
+      return
+    }
+    if (intersection && intersection.intersectionRatio > 0) {
+      setVisible(true)
+    }
+  }, [intersection])
+  return visible
+}
+
 const Deployments = ({ releases }: Pick<Data, 'releases'>) => {
+  const ref = React.useRef(null)
+  const visible = useVisible(ref)
+
   const monthlyDeployment = releases.reduce<Record<number, MonthlyRelease>>((acc, curr) => {
     const date = new Date(curr)
     const month = new Date(date).getMonth()
@@ -34,38 +58,40 @@ const Deployments = ({ releases }: Pick<Data, 'releases'>) => {
 
   return (
     <div className="flex flex-col xl:p-24 xl:pb-8 pb-0 gap-16 xl:gap-32 pt-16 xl:pt-32">
-      <div className="w-full h-80">
-        <ResponsiveContainer width="100%" height="100%">
-          <AreaChart
-            width={500}
-            height={400}
-            data={sortedData}
-            margin={{
-              top: 10,
-              right: 30,
-              left: 0,
-              bottom: 0,
-            }}
-          >
-            <defs>
-              <linearGradient id="colorRelease" x1={0} y1={0} x2={0} y2={1}>
-                <stop offset="5%" stopColor="#1CFFC0" stopOpacity={0.9} />
-                <stop offset="95%" stopColor="rgba(196, 196, 196, 0" />
-              </linearGradient>
-            </defs>
+      <div className="w-full h-80" ref={ref}>
+        {visible && (
+          <ResponsiveContainer width="100%" height="100%">
+            <AreaChart
+              width={500}
+              height={400}
+              data={sortedData}
+              margin={{
+                top: 10,
+                right: 30,
+                left: 0,
+                bottom: 0,
+              }}
+            >
+              <defs>
+                <linearGradient id="colorRelease" x1={0} y1={0} x2={0} y2={1}>
+                  <stop offset="5%" stopColor="#1CFFC0" stopOpacity={0.9} />
+                  <stop offset="95%" stopColor="rgba(196, 196, 196, 0" />
+                </linearGradient>
+              </defs>
 
-            <XAxis dataKey="name" stroke="rgba(255, 255, 255, 0.87)" strokeWidth={0} dy={10} />
-            <YAxis stroke="rgba(255, 255, 255, 0.87)" strokeWidth={0} dx={-10} />
-            <Area
-              type="monotone"
-              dataKey="releases"
-              stroke="#1CFFC0"
-              strokeWidth={4}
-              fillOpacity={1}
-              fill="url(#colorRelease)"
-            />
-          </AreaChart>
-        </ResponsiveContainer>
+              <XAxis dataKey="name" stroke="rgba(255, 255, 255, 0.87)" strokeWidth={0} dy={10} />
+              <YAxis stroke="rgba(255, 255, 255, 0.87)" strokeWidth={0} dx={-10} />
+              <Area
+                type="monotone"
+                dataKey="releases"
+                stroke="#1CFFC0"
+                strokeWidth={4}
+                fillOpacity={1}
+                fill="url(#colorRelease)"
+              />
+            </AreaChart>
+          </ResponsiveContainer>
+        )}
       </div>
 
       <div className="flex flex-col gap-8">
