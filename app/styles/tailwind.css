@@ -15,8 +15,8 @@
     @apply bg-transparent hover:bg-highlight-on text-highlight-on hover:text-black text-sm rounded-full cursor-pointer p-3 border-2 border-highlight-on transition-all ease-in-out;
   }
 
-  .button--inverted {
-    @apply bg-grey-400 hover:bg-highlight-on text-highlight-on hover:text-black;
+  .button.active {
+    @apply bg-highlight-on text-black;
   }
 
   .text-gradient {
