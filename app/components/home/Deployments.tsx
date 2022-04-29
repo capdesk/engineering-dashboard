@@ -17,7 +17,7 @@ const useVisible = (ref: React.RefObject<HTMLElement>) => {
   const intersection = useIntersection(ref, {
     root: null,
     rootMargin: '0px',
-    threshold: 1,
+    threshold: 0.2,
   })
 
   useEffect(() => {
