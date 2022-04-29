@@ -22,6 +22,7 @@
     ".md": "doctoc"
   },
   "dependencies": {
+    "@remix-run/netlify": "^1.4.3",
     "@remix-run/react": "^1.1.3",
     "@remix-run/serve": "^1.1.3",
     "@remix-run/vercel": "^1.1.3",

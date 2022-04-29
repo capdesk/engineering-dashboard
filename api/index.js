@@ -1,4 +1,4 @@
-const { createRequestHandler } = require("@remix-run/vercel");
+const { createRequestHandler } = require("@remix-run/netlify");
 
 module.exports = createRequestHandler({
   build: require("./_build")
