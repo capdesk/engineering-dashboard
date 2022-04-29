@@ -45,7 +45,7 @@ const articles = [
     description: (
       <div className="flex flex-col gap-2">
         <p>What it’s like to be a student developer at Capdesk</p>
-        <p>Written on July 14, 2021, by Krystof Spiller, Student Developer at Capdesk read</p>
+        <p>by Krystof Spiller, July 2021</p>
       </div>
     ),
     label: 'read',
@@ -57,7 +57,7 @@ const articles = [
     description: (
       <div className="flex flex-col gap-2">
         <p>Five learnings in five years at Capdesk</p>
-        <p>Written on May 27, 2021, by Alexander Olsen, Senior Backend Developer</p>
+        <p>by Alexander Olsen, May 2021</p>
       </div>
     ),
     label: 'read',
@@ -125,7 +125,7 @@ export default function Resources() {
       <Hero title="Resources">
         <div className="flex flex-col lg:flex-row gap-2 lg:gap-0 justify-between">
           <Paragraph className="w-full lg:w-1/2">
-            Dive in and discover the latest from our Engineering Team.We’ve got videos, podcasts and articles to keep
+            Dive in and discover the latest from our Engineering Team. We’ve got videos, podcasts and articles to keep
             you entertained. Plus, check out our detailed design system. Enjoy!
           </Paragraph>
           <TodayDate />
