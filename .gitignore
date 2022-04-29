@@ -134,3 +134,4 @@ dist
 api/_build
 public/build
 /app/tailwind.css
+build/
