@@ -49,7 +49,14 @@ const Team = () => {
           </a>
         </div>
 
-        <Arrow start="hiring-arrow" end="hiring-circle" lineColor="#dddddd" showHead={false} endAnchor="left" />
+        <Arrow
+          start="hiring-arrow"
+          end="hiring-circle"
+          lineColor="#dddddd"
+          showHead={false}
+          endAnchor="left"
+          curveness={1}
+        />
       </div>
     </div>
   )
