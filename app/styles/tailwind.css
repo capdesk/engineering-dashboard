@@ -26,3 +26,7 @@
     -webkit-text-fill-color: transparent;
   }
 }
+
+.recharts-surface {
+  overflow: visible;
+}
