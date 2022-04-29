@@ -122,7 +122,7 @@ export default function Index() {
         <Team />
       </HomeSection>
 
-      <HomeSection title="The tools we use" circleId="tools" color={SectionColor.TOOLS}>
+      <HomeSection title="The tools we use" circleId="tools" color={SectionColor.TOOLS} smallTitle>
         <Tools />
       </HomeSection>
     </div>

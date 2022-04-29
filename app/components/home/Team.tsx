@@ -26,10 +26,10 @@ const Team = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-        <Metric title="Squads" value={3} />
-        <Metric title="Members" value={18} />
         <Metric title="Countries" value={9} />
         <Metric title="Languages" value={7} />
+        <Metric title="Members" value={19} />
+        <Metric title="Squads" value={3} />
       </div>
 
       <div className="flex flex-row gap-8 w-2/3 m-auto">
@@ -44,7 +44,7 @@ const Team = () => {
             with solid processes and room for growth? Check out our latest positions or drop us an email at
             careers@capdesk.com find out more
           </Paragraph>
-          <a href="https://careers.capdesk.com/" className="text-orangeish text-xl hover:underline">
+          <a href="https://careers.capdesk.com/" className="text-highlight-on text-xl hover:underline">
             Find out more
           </a>
         </div>

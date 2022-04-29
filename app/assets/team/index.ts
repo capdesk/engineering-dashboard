@@ -16,6 +16,7 @@ import * as rosalba_giuffrida from './rosalba_giuffrida.mdx'
 import * as sarolta_sebo from './sarolta_sebo.mdx'
 import * as vincent_seguin from './vincent_seguin.mdx'
 import * as marc_ruaix from './marc_ruaix.mdx'
+import * as edney_pitta from './edney_pitta.mdx'
 
 export default [
   kevin_reece,
@@ -36,4 +37,5 @@ export default [
   eray_tarhan,
   rafael_caseiro_lemos,
   marc_ruaix,
+  edney_pitta,
 ]
