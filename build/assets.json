@@ -1,15 +1,15 @@
 {
-  "version": "79e5b2df",
+  "version": "ea5b2e9f",
   "entry": {
-    "module": "/build/entry.client-BVSNVHS7.js",
-    "imports": ["/build/_shared/chunk-ZY2XGNRM.js", "/build/_shared/chunk-C7LLGMLH.js"]
+    "module": "/build/entry.client-WOJNLDHZ.js",
+    "imports": ["/build/_shared/chunk-EQOYV4FQ.js", "/build/_shared/chunk-UIMY4JKC.js"]
   },
   "routes": {
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-36OSWDT7.js",
-      "imports": ["/build/_shared/chunk-UAIYDMTT.js", "/build/_shared/chunk-L4FQXHEC.js"],
+      "module": "/build/root-QGXMPDKM.js",
+      "imports": ["/build/_shared/chunk-AULYRFUK.js", "/build/_shared/chunk-U2GJLRCB.js"],
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -19,8 +19,8 @@
       "id": "routes/index",
       "parentId": "root",
       "index": true,
-      "module": "/build/routes/index-4GQ5ZDQD.js",
-      "imports": ["/build/_shared/chunk-XIVKKLXJ.js"],
+      "module": "/build/routes/index-C5EIYU2L.js",
+      "imports": ["/build/_shared/chunk-BGCHHMZB.js"],
       "hasAction": false,
       "hasLoader": true,
       "hasCatchBoundary": false,
@@ -30,8 +30,8 @@
       "id": "routes/resources",
       "parentId": "root",
       "path": "resources",
-      "module": "/build/routes/resources-DX3KCTJ4.js",
-      "imports": ["/build/_shared/chunk-SNQRAQOS.js", "/build/_shared/chunk-XIVKKLXJ.js"],
+      "module": "/build/routes/resources-T7B52YUS.js",
+      "imports": ["/build/_shared/chunk-UZHYI247.js", "/build/_shared/chunk-BGCHHMZB.js"],
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -41,13 +41,13 @@
       "id": "routes/team",
       "parentId": "root",
       "path": "team",
-      "module": "/build/routes/team-SW2GQPC6.js",
-      "imports": ["/build/_shared/chunk-SNQRAQOS.js", "/build/_shared/chunk-XIVKKLXJ.js"],
+      "module": "/build/routes/team-RKEPHJEU.js",
+      "imports": ["/build/_shared/chunk-UZHYI247.js", "/build/_shared/chunk-BGCHHMZB.js"],
       "hasAction": false,
       "hasLoader": true,
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-79E5B2DF.js"
+  "url": "/build/manifest-EA5B2E9F.js"
 }
