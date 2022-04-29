@@ -4,6 +4,7 @@
   "description": "",
   "license": "",
   "scripts": {
+    "start": "cross-env NODE_ENV=production node ./server.js",
     "build": "npm run build:css && remix build",
     "build:css": "tailwindcss -i ./app/styles/tailwind.css -o ./app/tailwind.css --minify",
     "dev": "concurrently \"npm run dev:css\" \"remix dev\"",

@@ -1,0 +1,53 @@
+{
+  "version": "79e5b2df",
+  "entry": {
+    "module": "/build/entry.client-BVSNVHS7.js",
+    "imports": ["/build/_shared/chunk-ZY2XGNRM.js", "/build/_shared/chunk-C7LLGMLH.js"]
+  },
+  "routes": {
+    "root": {
+      "id": "root",
+      "path": "",
+      "module": "/build/root-36OSWDT7.js",
+      "imports": ["/build/_shared/chunk-UAIYDMTT.js", "/build/_shared/chunk-L4FQXHEC.js"],
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/index": {
+      "id": "routes/index",
+      "parentId": "root",
+      "index": true,
+      "module": "/build/routes/index-4GQ5ZDQD.js",
+      "imports": ["/build/_shared/chunk-XIVKKLXJ.js"],
+      "hasAction": false,
+      "hasLoader": true,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/resources": {
+      "id": "routes/resources",
+      "parentId": "root",
+      "path": "resources",
+      "module": "/build/routes/resources-DX3KCTJ4.js",
+      "imports": ["/build/_shared/chunk-SNQRAQOS.js", "/build/_shared/chunk-XIVKKLXJ.js"],
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/team": {
+      "id": "routes/team",
+      "parentId": "root",
+      "path": "team",
+      "module": "/build/routes/team-SW2GQPC6.js",
+      "imports": ["/build/_shared/chunk-SNQRAQOS.js", "/build/_shared/chunk-XIVKKLXJ.js"],
+      "hasAction": false,
+      "hasLoader": true,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    }
+  },
+  "url": "/build/manifest-79E5B2DF.js"
+}
