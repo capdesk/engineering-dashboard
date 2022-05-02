@@ -17,10 +17,21 @@ export function links() {
   ]
 }
 
+const description = "Our live Engineering Dashboard offers a quick sneak peek into Capdesk's engineering world."
+const title = 'Capdesk Engineering Dashboard'
+
 export const meta: MetaFunction = () => {
   return {
-    title: 'Capdesk Engineering Dashboard',
-    description: "Our live Engineering Dashboard offers a quick sneak peek into Capdesk's engineering world.",
+    title,
+    description,
+    'og:title': title,
+    'og:type': 'article',
+    'og:image': 'https://engineering.capdesk.com/img/capdesk_spaceship_social.jpeg',
+    'og:url': 'https://engineering.capdesk.com',
+    'twitter:card': 'summary_large_image',
+    'og:description': description,
+    'og:site_name': title,
+    'twitter:site': '@capdesk',
   }
 }
 
