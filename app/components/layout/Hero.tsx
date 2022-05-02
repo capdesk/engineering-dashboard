@@ -1,5 +1,5 @@
 import Lottie from 'lottie-react'
-import { useLocation } from 'remix'
+import { Link, useLocation } from 'remix'
 import engineering from '~/assets/animations/engineering.json'
 import Circle from '~/components/Circle'
 
@@ -10,7 +10,9 @@ const Hero: React.FC<{ title: string; hideLine?: boolean; extra?: React.ReactNod
     <div className="px-7 lg:px-14 pt-8 pb-8 md:pb-0">
       <div className="flex flex-row items-center gap-5 pb-2">
         <div className="hidden md:block max-w-[200px] lg:max-w-[250px]">
-          <Lottie animationData={engineering} loop autoplay />
+          <Link to="/">
+            <Lottie animationData={engineering} loop autoplay />
+          </Link>
         </div>
         <div className="flex flex-col w-full pt-8">
           <h1 className="text-5xl font-mono text-highlight-on font-light">{title}</h1>

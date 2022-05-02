@@ -25,15 +25,15 @@ const Footer: React.FC<{}> = () => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col justify-between text-right font-inter">
+        <div className="flex flex-col justify-between text-right font-inter gap-4">
           <Link className="hover:underline" to="/">
-            Home
-          </Link>
-          <Link className="hover:underline" to="/team">
-            Team
+            Dashboard
           </Link>
           <Link className="hover:underline" to="/resources">
             Resources
+          </Link>
+          <Link className="hover:underline" to="/team">
+            Team
           </Link>
         </div>
       </div>

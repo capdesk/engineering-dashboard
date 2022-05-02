@@ -41,10 +41,9 @@ const Team = () => {
           <H3>Interested in joining the team?</H3>
           <Paragraph className="font-inter">
             Interested in joining the team? Do you like what you see at Capdesk? Are you looking to join a product team
-            with solid processes and room for growth? Check out our latest positions or drop us an email at
-            careers@capdesk.com find out more
+            with solid processes and room for growth? Check out our latest positions below.
           </Paragraph>
-          <a href="https://careers.capdesk.com/" className="text-highlight-on text-xl hover:underline">
+          <a href="https://careers.capdesk.com/" target="_blank" className="text-highlight-on text-xl hover:underline">
             Find out more
           </a>
         </div>
