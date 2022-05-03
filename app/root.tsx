@@ -1,5 +1,5 @@
 import progress from 'react-circular-progressbar/dist/styles.css'
-import type { MetaFunction } from 'remix'
+import { json, MetaFunction, useLoaderData } from 'remix'
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from 'remix'
 import Footer from '~/components/layout/Footer'
 import Navbar from '~/components/Navbar'
@@ -35,7 +35,29 @@ export const meta: MetaFunction = () => {
   }
 }
 
-function Document({ children, title }: { children: React.ReactNode; title?: string }) {
+type LoaderData = {
+  env: {
+    gtagTrackingId: string | undefined
+  }
+}
+
+export async function loader() {
+  return json({
+    env: {
+      gtagTrackingId: process.env.GTAG_TRACKING_ID,
+    },
+  })
+}
+
+function Document({
+  children,
+  title,
+  env: { gtagTrackingId },
+}: {
+  children: React.ReactNode
+  title?: string
+  env: LoaderData['env']
+}) {
   return (
     <html lang="en">
       <head>
@@ -43,6 +65,25 @@ function Document({ children, title }: { children: React.ReactNode; title?: stri
         <meta name="viewport" content="width=device-width,initial-scale=1" /> {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
+        {!gtagTrackingId ? null : (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${gtagTrackingId}`} />
+            <script
+              async
+              id="gtag-init"
+              dangerouslySetInnerHTML={{
+                __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gtagTrackingId}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+              }}
+            />
+          </>
+        )}
       </head>
       <body>
         {children}
@@ -65,8 +106,10 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
 }
 
 export default function App() {
+  const { env } = useLoaderData<LoaderData>()
+
   return (
-    <Document>
+    <Document env={env}>
       <Layout>
         <Outlet />
       </Layout>
