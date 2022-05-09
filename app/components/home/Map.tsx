@@ -2,15 +2,15 @@ import { Link } from 'remix'
 import map from '~/assets/images/map.svg'
 
 const countries = [
-  { country: 'Denmark', flag: '🇩🇰', size: 8, x: '50%', y: '35%' },
+  { country: 'Denmark', flag: '🇩🇰', size: 8, x: '49%', y: '39%' },
   { country: 'Canada', flag: '🇨🇦', size: 2, x: '26%', y: '45%' },
-  { country: 'Italy', flag: '🇮🇹', size: 1, x: '53%', y: '52%' },
-  { country: 'Portugal', flag: '🇵🇹', size: 2, x: '44.5%', y: '52%' },
+  { country: 'Italy', flag: '🇮🇹', size: 1, x: '50%', y: '50%' },
+  { country: 'Portugal', flag: '🇵🇹', size: 2, x: '44%', y: '51.5%' },
   { country: 'Spain', flag: '🇪🇸', size: 1, x: '46%', y: '52%' },
   { country: 'United Kingdom', flag: '🇬🇧', size: 2, x: '46%', y: '44%' },
-  { country: 'Germany', flag: '🇩🇪', size: 1, x: '54%', y: '44%' },
-  { country: 'Romania', flag: '🇷🇴', size: 1, x: '54%', y: '50%' },
-  { country: 'Turkey', flag: '🇹🇷', size: 1, x: '57%', y: '51.5%' },
+  { country: 'Germany', flag: '🇩🇪', size: 1, x: '51%', y: '44%' },
+  { country: 'Romania', flag: '🇷🇴', size: 1, x: '54%', y: '49%' },
+  { country: 'Turkey', flag: '🇹🇷', size: 1, x: '55%', y: '52%' },
 ]
 
 const sizes: Record<number, number> = {
