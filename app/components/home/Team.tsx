@@ -28,7 +28,7 @@ const Team = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
         <Metric title="Countries" value={9} />
         <Metric title="Languages" value={7} />
-        <Metric title="Members" value={19} />
+        <Metric title="Members" value={18} />
         <Metric title="Squads" value={3} />
       </div>
 
