@@ -18,8 +18,6 @@ const Metric = ({ title, value }: { title: string; value: string | number }) => 
   )
 }
 
-const countryCount = perCountry.size
-
 const Team = () => {
   return (
     <div className="flex flex-col xl:p-16 xl:pb-8 pb-0 gap-8 xl:gap-20 pt-16 xl:pt-32">
@@ -28,7 +26,7 @@ const Team = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-        <Metric title="Countries" value={countryCount} />
+        <Metric title="Countries" value={perCountry.size} />
         <Metric title="Languages" value={7} />
         <Metric title="Members" value={membersCount} />
         <Metric title="Squads" value={3} />
