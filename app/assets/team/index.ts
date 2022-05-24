@@ -16,7 +16,6 @@ import * as sarolta_sebo from './sarolta_sebo.mdx'
 import * as vincent_seguin from './vincent_seguin.mdx'
 import * as marc_ruaix from './marc_ruaix.mdx'
 import * as edney_pitta from './edney_pitta.mdx'
-import * as pedro_vaz from './pedro_vaz.mdx'
 
 const members = [
   kevin_reece,
@@ -37,8 +36,9 @@ const members = [
   rafael_caseiro_lemos,
   marc_ruaix,
   edney_pitta,
-  pedro_vaz,
 ]
+
+const membersCount = members.length
 
 const perCountry = (members as unknown as Array<{ attributes: { country: string } }>).reduce<Map<string, number>>(
   (acc, { attributes: { country } }) => {
@@ -50,4 +50,4 @@ const perCountry = (members as unknown as Array<{ attributes: { country: string 
 )
 
 export default members
-export { perCountry }
+export { perCountry, membersCount }
