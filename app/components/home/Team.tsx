@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import { perCountry, membersCount } from '~/assets/team'
 import Arrow from '~/components/Arrow'
 import Circle from '~/components/Circle'
 import H3 from '~/components/typography/H3'
@@ -26,9 +26,9 @@ const Team = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-        <Metric title="Countries" value={9} />
+        <Metric title="Countries" value={perCountry.size} />
         <Metric title="Languages" value={7} />
-        <Metric title="Members" value={18} />
+        <Metric title="Members" value={membersCount} />
         <Metric title="Squads" value={3} />
       </div>
 
