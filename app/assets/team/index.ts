@@ -17,6 +17,7 @@ import * as vincent_seguin from './vincent_seguin.mdx'
 import * as marc_ruaix from './marc_ruaix.mdx'
 import * as edney_pitta from './edney_pitta.mdx'
 import * as pedro_vaz from './pedro_vaz.mdx'
+import * as matteo_la_cognata from './matteo_la_cognata.mdx'
 
 const members = [
   kevin_reece,
@@ -38,6 +39,7 @@ const members = [
   marc_ruaix,
   edney_pitta,
   pedro_vaz,
+  matteo_la_cognata,
 ]
 
 const membersCount = members.length
