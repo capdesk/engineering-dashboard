@@ -7,7 +7,6 @@ import * as krystof_spiller from './krystof_spiller.mdx'
 import * as marc_antoine_ferland from './marc-antoine_ferland.mdx'
 import * as maria_muhandes from './maria_muhandes.mdx'
 import * as mikkel_boje from './mikkel_boje.mdx'
-import * as neva_stumberger from './neva_stumberger.mdx'
 import * as pawel_wawreszuk from './pawel_wawreszuk.mdx'
 import * as pete_radcliffe from './pete_radcliffe.mdx'
 import * as rafael_caseiro_lemos from './rafael_caseiro_lemos.mdx'
@@ -27,7 +26,6 @@ const members = [
   mikkel_boje,
   sarolta_sebo,
   alexander_worm_olsen,
-  neva_stumberger,
   krystof_spiller,
   marc_antoine_ferland,
   maria_muhandes,
