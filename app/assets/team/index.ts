@@ -7,6 +7,7 @@ import * as krystof_spiller from './krystof_spiller.mdx'
 import * as maria_muhandes from './maria_muhandes.mdx'
 import * as mikkel_boje from './mikkel_boje.mdx'
 import * as pawel_wawreszuk from './pawel_wawreszuk.mdx'
+import * as pawel_duda from './pawel_duda.mdx'
 import * as pete_radcliffe from './pete_radcliffe.mdx'
 import * as rafael_caseiro_lemos from './rafael_caseiro_lemos.mdx'
 import * as rosalba_giuffrida from './rosalba_giuffrida.mdx'
@@ -30,6 +31,7 @@ const members = [
   pete_radcliffe,
   vincent_seguin,
   pawel_wawreszuk,
+  pawel_duda,
   eray_tarhan,
   rafael_caseiro_lemos,
   marc_ruaix,
