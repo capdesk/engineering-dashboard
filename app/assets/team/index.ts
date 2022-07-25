@@ -2,6 +2,7 @@ import * as adam_kovacs from './adam_kovacs.mdx'
 import * as alexander_worm_olsen from './alexander_worm_olsen.mdx'
 import * as andrei_mihai_nicolae from './andrei_mihai_nicolae.mdx'
 import * as eray_tarhan from './eray_tarhan.mdx'
+import * as jairo_odeli from './jairo_odeli.mdx'
 import * as kevin_reece from './kevin_reece.mdx'
 import * as krystof_spiller from './krystof_spiller.mdx'
 import * as maria_muhandes from './maria_muhandes.mdx'
@@ -38,6 +39,7 @@ const members = [
   edney_pitta,
   pedro_vaz,
   matteo_la_cognata,
+  jairo_odeli
 ]
 
 const membersCount = members.length
