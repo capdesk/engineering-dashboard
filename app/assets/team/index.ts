@@ -18,6 +18,9 @@ import * as marc_ruaix from './marc_ruaix.mdx'
 import * as edney_pitta from './edney_pitta.mdx'
 import * as pedro_vaz from './pedro_vaz.mdx'
 import * as matteo_la_cognata from './matteo_la_cognata.mdx'
+import * as sally_hansen from './sally_hansen.mdx'
+import * as uliana_musikhina from './uliana_musikhina.mdx'
+import * as emmanuel_erommonsele from './emmanuel_erommonsele.mdx'
 
 const members = [
   kevin_reece,
@@ -39,7 +42,10 @@ const members = [
   edney_pitta,
   pedro_vaz,
   matteo_la_cognata,
-  jairo_odeli
+  jairo_odeli,
+  sally_hansen,
+  uliana_musikhina,
+  emmanuel_erommonsele,
 ]
 
 const membersCount = members.length

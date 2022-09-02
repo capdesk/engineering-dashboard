@@ -37,7 +37,7 @@ const Squad = ({ members }: { members: Member[] }) => (
   </div>
 )
 
-type Team = 'tx' | 'hardcore' | 'coreros' | 'head_of'
+type Team = 'tx' | 'finance' | 'equity_plans' | 'platform' | 'head_of'
 
 type MemberAttributes = {
   name: string
@@ -89,7 +89,7 @@ export default function Team() {
       acc[team].push(curr)
       return acc
     },
-    { head_of: [], hardcore: [], coreros: [], tx: [] }
+    { head_of: [], finance: [], equity_plans: [], platform: [], tx: [] }
   )
   return (
     <div>
@@ -106,14 +106,17 @@ export default function Team() {
       <Section title="Heads">
         <Squad members={squads.head_of} />
       </Section>
-      <Section title="Finance & Platform" light>
-        <Squad members={squads.hardcore} />
+      <Section title="Finance" light>
+        <Squad members={squads.finance} />
       </Section>
       <Section title="Equity Plans">
-        <Squad members={squads.coreros} />
+        <Squad members={squads.equity_plans} />
       </Section>
       <Section title="Secondaries" light>
         <Squad members={squads.tx} />
+      </Section>
+      <Section title="International Platform">
+        <Squad members={squads.platform} />
       </Section>
     </div>
   )

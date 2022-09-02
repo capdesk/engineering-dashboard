@@ -14,6 +14,7 @@ const countries = [
   { code: 'tr', country: 'Turkey', flag: '🇹🇷', x: '55%', y: '52%' },
   { code: 'br', country: 'Brazil', flag: '🇧🇷', x: '36%', y: '74%' },
   { code: 'pl', country: 'Poland', flag: '🇵🇱', x: '53%', y: '44%' },
+  { code: 'ng', country: 'Nigeria', flag: '🇳🇬', x: '48%', y: '67%' },
 ]
 
 const sizes: Record<number, number> = {
