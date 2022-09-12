@@ -21,6 +21,7 @@ import * as matteo_la_cognata from './matteo_la_cognata.mdx'
 import * as sally_hansen from './sally_hansen.mdx'
 import * as uliana_musikhina from './uliana_musikhina.mdx'
 import * as emmanuel_erommonsele from './emmanuel_erommonsele.mdx'
+import * as lasse_ustrup from './lasse_ustrup.mdx'
 
 const members = [
   kevin_reece,
@@ -46,6 +47,7 @@ const members = [
   sally_hansen,
   uliana_musikhina,
   emmanuel_erommonsele,
+  lasse_ustrup,
 ]
 
 const membersCount = members.length
