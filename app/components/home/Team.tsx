@@ -29,7 +29,7 @@ const Team = () => {
         <Metric title="Countries" value={perCountry.size} />
         <Metric title="Languages" value={7} />
         <Metric title="Members" value={membersCount} />
-        <Metric title="Squads" value={3} />
+        <Metric title="Squads" value={4} />
       </div>
 
       <div className="flex flex-row gap-8 w-full md:w-2/3 m-auto">
