@@ -24,6 +24,7 @@ import * as emmanuel_erommonsele from './emmanuel_erommonsele.mdx'
 import * as lasse_ustrup from './lasse_ustrup.mdx'
 import * as mayur_virendra from './mayur_virendra.mdx'
 import * as jessica_joaquim_da_silva from './jessica_joaquim_da_silva.mdx'
+import * as luiz_pericolo from './luiz_pericolo.mdx'
 
 const members = [
   kevin_reece,
@@ -52,6 +53,7 @@ const members = [
   lasse_ustrup,
   mayur_virendra,
   jessica_joaquim_da_silva,
+  luiz_pericolo,
 ]
 
 const membersCount = members.length
