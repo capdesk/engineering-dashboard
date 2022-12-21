@@ -57,7 +57,7 @@ const articles = [
     description: (
       <div className="flex flex-col gap-2">
         <p>Five learnings in five years at Capdesk</p>
-        <p>by Alexander Olsen, May 2021</p>
+        <p>by Alexander Laghouila, May 2021</p>
       </div>
     ),
     label: 'read',

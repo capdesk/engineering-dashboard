@@ -27,8 +27,8 @@ volta install yarn@1.22.11
 ```
 
 Thanks to its [pinning mechanism](https://docs.volta.sh/reference/pin), Volta
-will know which version to use in Spaceship. The current versions of Node and
-Yarn used by Spaceship are available [here](package.json).
+will know which version to use in the Engineering Dashboard. The current versions of Node and
+Yarn used by the Engineering Dashboard are available [here](package.json).
 
 You can also manage node and yarn with NVM and YVM. Please refer to the versions
 pinned [here](package.json).
