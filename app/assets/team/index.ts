@@ -1,8 +1,7 @@
 import * as adam_kovacs from './adam_kovacs.mdx'
-import * as alexander_worm_olsen from './alexander_worm_olsen.mdx'
+import * as alexander_laghouila from './alexander_laghouila.mdx'
 import * as andrei_mihai_nicolae from './andrei_mihai_nicolae.mdx'
 import * as eray_tarhan from './eray_tarhan.mdx'
-import * as jairo_odeli from './jairo_odeli.mdx'
 import * as kevin_reece from './kevin_reece.mdx'
 import * as krystof_spiller from './krystof_spiller.mdx'
 import * as maria_muhandes from './maria_muhandes.mdx'
@@ -36,7 +35,7 @@ const members = [
   rosalba_giuffrida,
   mikkel_boje,
   sarolta_sebo,
-  alexander_worm_olsen,
+  alexander_laghouila,
   krystof_spiller,
   maria_muhandes,
   pete_radcliffe,
@@ -49,7 +48,6 @@ const members = [
   edney_pitta,
   pedro_vaz,
   matteo_la_cognata,
-  jairo_odeli,
   sally_hansen,
   uliana_musikhina,
   emmanuel_erommonsele,
