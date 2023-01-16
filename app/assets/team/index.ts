@@ -26,6 +26,7 @@ import * as jessica_joaquim_da_silva from './jessica_joaquim_da_silva.mdx'
 import * as luiz_pericolo from './luiz_pericolo.mdx'
 import * as vinay_verghese from './vinay_verghese.mdx'
 import * as felipe_galvao from './felipe_galvao.mdx'
+import * as luca_cantini from './luca_cantini.mdx'
 
 const members = [
   kevin_reece,
@@ -56,6 +57,7 @@ const members = [
   luiz_pericolo,
   vinay_verghese,
   felipe_galvao,
+  luca_cantini,
 ]
 
 const membersCount = members.length
