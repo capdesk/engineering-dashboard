@@ -22,7 +22,6 @@ import * as uliana_musikhina from './uliana_musikhina.mdx'
 import * as emmanuel_erommonsele from './emmanuel_erommonsele.mdx'
 import * as lasse_ustrup from './lasse_ustrup.mdx'
 import * as mayur_virendra from './mayur_virendra.mdx'
-import * as jessica_joaquim_da_silva from './jessica_joaquim_da_silva.mdx'
 import * as luiz_pericolo from './luiz_pericolo.mdx'
 import * as vinay_verghese from './vinay_verghese.mdx'
 import * as felipe_galvao from './felipe_galvao.mdx'
@@ -53,7 +52,6 @@ const members = [
   emmanuel_erommonsele,
   lasse_ustrup,
   mayur_virendra,
-  jessica_joaquim_da_silva,
   luiz_pericolo,
   vinay_verghese,
   felipe_galvao,
