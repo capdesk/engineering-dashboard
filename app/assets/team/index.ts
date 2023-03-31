@@ -10,7 +10,6 @@ import * as pawel_wawreszuk from './pawel_wawreszuk.mdx'
 import * as pawel_duda from './pawel_duda.mdx'
 import * as pete_radcliffe from './pete_radcliffe.mdx'
 import * as rafael_caseiro_lemos from './rafael_caseiro_lemos.mdx'
-import * as rosalba_giuffrida from './rosalba_giuffrida.mdx'
 import * as sarolta_sebo from './sarolta_sebo.mdx'
 import * as vincent_seguin from './vincent_seguin.mdx'
 import * as marc_ruaix from './marc_ruaix.mdx'
@@ -31,7 +30,6 @@ const members = [
   kevin_reece,
   adam_kovacs,
   andrei_mihai_nicolae,
-  rosalba_giuffrida,
   mikkel_boje,
   sarolta_sebo,
   alexander_laghouila,
