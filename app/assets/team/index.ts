@@ -20,7 +20,6 @@ import * as sally_hansen from './sally_hansen.mdx'
 import * as uliana_musikhina from './uliana_musikhina.mdx'
 import * as emmanuel_erommonsele from './emmanuel_erommonsele.mdx'
 import * as lasse_ustrup from './lasse_ustrup.mdx'
-import * as mayur_virendra from './mayur_virendra.mdx'
 import * as luiz_pericolo from './luiz_pericolo.mdx'
 import * as felipe_galvao from './felipe_galvao.mdx'
 import * as luca_cantini from './luca_cantini.mdx'
@@ -49,7 +48,6 @@ const members = [
   uliana_musikhina,
   emmanuel_erommonsele,
   lasse_ustrup,
-  mayur_virendra,
   luiz_pericolo,
   felipe_galvao,
   luca_cantini,
