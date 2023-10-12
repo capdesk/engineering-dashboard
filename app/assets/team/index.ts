@@ -2,7 +2,6 @@ import * as adam_kovacs from './adam_kovacs.mdx'
 import * as alexander_laghouila from './alexander_laghouila.mdx'
 import * as andrei_mihai_nicolae from './andrei_mihai_nicolae.mdx'
 import * as eray_tarhan from './eray_tarhan.mdx'
-import * as kevin_reece from './kevin_reece.mdx'
 import * as krystof_spiller from './krystof_spiller.mdx'
 import * as mikkel_boje from './mikkel_boje.mdx'
 import * as pawel_wawreszuk from './pawel_wawreszuk.mdx'
@@ -25,7 +24,6 @@ import * as luca_cantini from './luca_cantini.mdx'
 import * as eric_fleury from './eric_fleury.mdx'
 
 const members = [
-  kevin_reece,
   adam_kovacs,
   andrei_mihai_nicolae,
   mikkel_boje,
