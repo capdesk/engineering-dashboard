@@ -19,6 +19,7 @@ const countries = [
 ]
 
 const sizes: Record<number, number> = {
+  0: 0,
   1: 1,
   2: 1.5,
   3: 1.75,
@@ -35,7 +36,7 @@ const Country = ({ flag, country, x, y, code }: typeof countries[number]) => {
   return (
     <div
       className={`group aspect-square absolute rounded-full bg-highlight-on hover:bg-white hover:scale-125 animation ease-in-all duration-200 flex justify-center align-items hover:z-50 font-light text-xl`}
-      style={{ left: x, top: y, width: `${sizes[size] ? sizes[size] : maxSize}%` }}
+      style={{ left: x, top: y, width: `${sizes[size] !== undefined ? sizes[size] : maxSize}%` }}
     >
       <div className="hidden group-hover:flex flex-col whitespace-nowrap absolute -top-full p-2 gap-2 rounded-sm bg-dark-300 text-sm z-10">
         <span>
