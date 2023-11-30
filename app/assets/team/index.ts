@@ -3,6 +3,7 @@ import * as alexander_laghouila from './alexander_laghouila.mdx'
 import * as andrei_mihai_nicolae from './andrei_mihai_nicolae.mdx'
 import * as eray_tarhan from './eray_tarhan.mdx'
 import * as krystof_spiller from './krystof_spiller.mdx'
+import * as marc_antoine_ferland from './marc-antoine_ferland.mdx'
 import * as mikkel_boje from './mikkel_boje.mdx'
 import * as pawel_wawreszuk from './pawel_wawreszuk.mdx'
 import * as pawel_duda from './pawel_duda.mdx'
@@ -30,6 +31,7 @@ const members = [
   sarolta_sebo,
   alexander_laghouila,
   krystof_spiller,
+  marc_antoine_ferland,
   pete_radcliffe,
   vincent_seguin,
   pawel_wawreszuk,
