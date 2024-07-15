@@ -19,7 +19,6 @@ import * as uliana_musikhina from './uliana_musikhina.mdx'
 import * as emmanuel_erommonsele from './emmanuel_erommonsele.mdx'
 import * as lasse_ustrup from './lasse_ustrup.mdx'
 import * as luiz_pericolo from './luiz_pericolo.mdx'
-import * as felipe_galvao from './felipe_galvao.mdx'
 import * as eric_fleury from './eric_fleury.mdx'
 
 const members = [
@@ -44,7 +43,6 @@ const members = [
   emmanuel_erommonsele,
   lasse_ustrup,
   luiz_pericolo,
-  felipe_galvao,
   eric_fleury,
 ]
 
