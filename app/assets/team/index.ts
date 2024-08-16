@@ -20,6 +20,7 @@ import * as emmanuel_erommonsele from './emmanuel_erommonsele.mdx'
 import * as lasse_ustrup from './lasse_ustrup.mdx'
 import * as luiz_pericolo from './luiz_pericolo.mdx'
 import * as eric_fleury from './eric_fleury.mdx'
+import * as maseh_hadaf from './maseh_hadaf.mdx'
 
 const members = [
   adam_kovacs,
@@ -44,6 +45,7 @@ const members = [
   lasse_ustrup,
   luiz_pericolo,
   eric_fleury,
+  maseh_hadaf,
 ]
 
 const membersCount = members.length
