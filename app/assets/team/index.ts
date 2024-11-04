@@ -14,7 +14,6 @@ import * as vincent_seguin from './vincent_seguin.mdx'
 import * as marc_ruaix from './marc_ruaix.mdx'
 import * as edney_pitta from './edney_pitta.mdx'
 import * as pedro_vaz from './pedro_vaz.mdx'
-import * as sally_hansen from './sally_hansen.mdx'
 import * as uliana_musikhina from './uliana_musikhina.mdx'
 import * as emmanuel_erommonsele from './emmanuel_erommonsele.mdx'
 import * as lasse_ustrup from './lasse_ustrup.mdx'
@@ -39,7 +38,6 @@ const members = [
   marc_ruaix,
   edney_pitta,
   pedro_vaz,
-  sally_hansen,
   uliana_musikhina,
   emmanuel_erommonsele,
   lasse_ustrup,

@@ -60,11 +60,12 @@
     "typescript": "^4.1.2"
   },
   "engines": {
-    "node": "18.x"
+    "node": "18.x",
+    "yarn": "4.x"
   },
   "sideEffects": false,
   "volta": {
     "node": "18.12.0",
-    "yarn": "1.22.19"
+    "yarn": "4.0.0"
   }
 }
